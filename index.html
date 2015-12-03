@@ -1,10 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<body>
-    <center><h1>Interactive Programming Project (27/11/15)</h1></center>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Task Manager</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="images/task.png" alt="tab Icon">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+      
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+</head>
+
+<body id="mainBody">
+	<h1>Task Manager</h1><br/><br/>
+    <h3>Enter information into the fields below, click "Add Task" after each completed entry, and click "Go To Task Manager" to display the Task Manager!</h3><br/><br/>
+    <div id="border">
+    	Enter Task Decription Here:<input type="text" id="descInput"><br/><br/>
+    	Enter Task Priority Here:<input type="number" id="priorInput" value=1><br/><br/>
+    	Enter Task Due Date Here:<input type="date" id="dateInput"><br/><br/>
+        <a href="retrieveTask.html"><button id="enter" href="retrieveTask.html" target="_blank">Add Task</button></a>
+    </div>
+       
+    <script>
+		var info=document.createElement("h3");
+		info.innerHTML="(Click on the table headings to sort columns)";
+		var tasks=[];
+		var mainBody=document.getElementById("mainBody");
+		
+		document.getElementById("enter").onclick= function(){
+            var keyinput= "myTask";
+            
+            if(descInput.value != ""){
+                var randomNumber = (Math.random() * 10) + 1;
+			    randomNumber=Math.round(randomNumber);
+                var task={
+				    id: randomNumber,
+				    description: document.getElementById("descInput").value,
+				    priority: document.getElementById("priorInput").value,
+				    dueDate: document.getElementById("dateInput").value,
+                };
+			    tasks.push(task);
+                
+                if(typeof(window.localStorage)!="undefined"){
+                    window.localStorage.setItem(keyinput,JSON.stringify(tasks));	
+		        }
+		
+		         else{
+			         alert("window.localStorage, not defined");
+		        }
+            }
+            
+            else{
+                alert("ERROR! Please Enter a Task Description");
+            }
+		}	
+</script>	
+    
+    
+<center><h1>Interactive Programming Project (27/11/15)</h1></center>
     <center>
 	<object width="1024" height="768" data="finalVersion.swf" style="align: center">
     </object>
-    </center>
+</center>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
