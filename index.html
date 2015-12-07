@@ -1,104 +1,101 @@
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Retrieve Task</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
 <link rel="shortcut icon" href="images/task.png" alt="tab Icon">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
       
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 </head>
 
 <body id="mainBody" class="table-responsive">
-    <h1>Task Manager</h1><br/><br/>
-    <h3>Enter information into the fields below, click "Add Task" after each completed entry, and click "Go To Task Manager" to display the Task Manager!</h3><br/><br/>
-    <div id="border">
-	    Enter Task Decription Here:<input type="text" id="descInput"><br/><br/>
-        Enter Task Priority Here:<input type="number" id="priorInput" value=1><br/><br/>
-	    Enter Task Due Date Here:<input type="date" id="dateInput"><br/><br/>
-        <a href="index.html"><button id="enter" href="index.html">Add Task</button></a>
-    </div>
+<h1>Task Manager</h1><br/><br/>
+<h3>Enter information into the fields below, click "Add Task" after each completed entry, and click "Go To Task Manager" to display the Task Manager!</h3><br/><br/>
+<div id="border">
+	Enter Task Decription Here:<input type="text" id="descInput"><br/><br/>
+	Enter Task Priority Here:<input type="number" id="priorInput" value=1><br/><br/>
+	Enter Task Due Date Here:<input type="date" id="dateInput"><br/><br/>
+    <a href="index.html"><button id="enter" href="index.html">Add Task</button></a>
+</div>
     
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-        K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     
-    <script>
-        var info=document.createElement("h3");
-		    info.innerHTML="(Click on the table headings to sort columns)";
-            var tasks=[];
-		    var mainBody=document.getElementById("mainBody");
+<script>
+    var info=document.createElement("h3");
+		info.innerHTML="(Click on the table headings to sort columns)";
+		var tasks=[];
+		var mainBody=document.getElementById("mainBody");
 		
-		    document.getElementById("enter").onclick= function(){
-                var keyinput= "myTask";
+		document.getElementById("enter").onclick= function(){
+            var keyinput= "myTask";
             
-                if(descInput.value != ""){
-                    var randomNumber = (Math.random() * 10) + 1;
-			        randomNumber=Math.round(randomNumber);
-                    var task={
-				        id: randomNumber,
-				        description: document.getElementById("descInput").value,
-				        priority: document.getElementById("priorInput").value,
-				        dueDate: document.getElementById("dateInput").value,
-                    };
-			        tasks.push(task);
+            if(descInput.value != ""){
+                var randomNumber = (Math.random() * 10) + 1;
+			    randomNumber=Math.round(randomNumber);
+                var task={
+				    id: randomNumber,
+				    description: document.getElementById("descInput").value,
+				    priority: document.getElementById("priorInput").value,
+				    dueDate: document.getElementById("dateInput").value,
+                };
+			    tasks.push(task);
                 
-                    if(typeof(window.localStorage)!="undefined"){
-                        window.localStorage.setItem(keyinput,JSON.stringify(tasks));	
-		            }
+                if(typeof(window.localStorage)!="undefined"){
+                    window.localStorage.setItem(keyinput,JSON.stringify(tasks));	
+		        }
 		
-		            else{
-			            alert("window.localStorage, not defined");
-		            }
-                }
+		         else{
+			         alert("window.localStorage, not defined");
+		        }
+            }
             
-                else{
-                    alert("ERROR! Please Enter a Task Description");
-                }
-		   }
+            else{
+                alert("ERROR! Please Enter a Task Description");
+            }
+		}
     
-        var tasks = JSON.parse(localStorage.getItem("myTask"));
-        var info=document.createElement("h3");
-        info.innerHTML="(Click on the table headings to sort columns)";
-	    var mainBody=document.getElementById("mainBody");
-        var peopleTable=document.createElement("table");
-	    peopleTable.setAttribute("id", "tableDesign");
-        peopleTable.setAttribute("class", "table table-striped");
-	    var tableBody=document.createElement("tbody");
-        var heading=document.createElement("tr");
-	    var id=document.createElement("th");
-        id.setAttribute("id", "sortID");
-	    var desc=document.createElement("th");
-        desc.setAttribute("id", "sortDescription");
- 	    var prior=document.createElement("th");
-        prior.setAttribute("id", "sortPriority");
- 	    var due=document.createElement("th");
-        due.setAttribute("id", "sortDate");
-	    var del=document.createElement("th");
-        id.innerHTML="ID";
-	    desc.innerHTML="Description";
-        prior.innerHTML="Priority";
-	    due.innerHTML="Due Date";
-        del.innerHTML="Delete?"; 
+    var tasks = JSON.parse(localStorage.getItem("myTask"));
+    var info=document.createElement("h3");
+    info.innerHTML="(Click on the table headings to sort columns)";
+	var mainBody=document.getElementById("mainBody");
+	var peopleTable=document.createElement("table");
+	peopleTable.setAttribute("id", "tableDesign");
+    peopleTable.setAttribute("class", "table table-striped");
+	var tableBody=document.createElement("tbody");
+	var heading=document.createElement("tr");
+	var id=document.createElement("th");
+	id.setAttribute("id", "sortID");
+	var desc=document.createElement("th");
+	desc.setAttribute("id", "sortDescription");
+	var prior=document.createElement("th");
+	prior.setAttribute("id", "sortPriority");
+	var due=document.createElement("th");
+	due.setAttribute("id", "sortDate");
+	var del=document.createElement("th");
+	id.innerHTML="ID";
+	desc.innerHTML="Description";
+	prior.innerHTML="Priority";
+	due.innerHTML="Due Date";
+	del.innerHTML="Delete?"; 
     
-        function printTable(){
-            mainBody.appendChild(info);
-            clearTable();
-            mainBody.appendChild(peopleTable);
-            peopleTable.appendChild(tableBody);
-            tableBody.appendChild(heading);
-            heading.appendChild(id);
-            heading.appendChild(desc);
-            heading.appendChild(prior);
-            heading.appendChild(due);
-            heading.appendChild(del);
-            for(var i = 0; i < tasks.length; i++){
+    function printTable(){
+        mainBody.appendChild(info);
+        clearTable();
+        mainBody.appendChild(peopleTable);
+        peopleTable.appendChild(tableBody);
+        tableBody.appendChild(heading);
+        heading.appendChild(id);
+        heading.appendChild(desc);
+        heading.appendChild(prior);
+        heading.appendChild(due);
+        heading.appendChild(del);
+        for(var i = 0; i < tasks.length; i++){
 				var newRow=document.createElement("tr");
 			
 				var taskID=document.createElement("td");
@@ -135,14 +132,6 @@
 					var j = this.parentNode.parentNode.rowIndex;
 					peopleTable.deleteRow(j-1);
 					tasks.splice(j-1,1);
-                    
-                    if(typeof(window.localStorage)!="undefined"){
-                        window.localStorage.setItem(keyinput,JSON.stringify(tasks));	
-		            }
-		
-		            else{
-			            alert("window.localStorage, not defined");
-		            }
 					clearTable();
 					printTable();
 				}
@@ -199,54 +188,53 @@
                         clearTable();
 				        printTable();
 				    }
-                }		
-        }
+            }		
+    }
     
-        desc.onclick=function(){
-            tasks.sort(function(a,b){
-                var nameA=a.description.toLowerCase();
-                var nameB=b.description.toLowerCase();
-                if (nameA < nameB){
-				    return -1;
-                }   
-                if (nameA > nameB){
-                    return 1;
-                }
-                else{
-                    return 0;
-                }
-            })
-            clearTable();
-            printTable();
-        }
+    desc.onclick=function(){
+        tasks.sort(function(a,b){
+            var nameA=a.description.toLowerCase();
+            var nameB=b.description.toLowerCase();
+            if (nameA < nameB){
+				return -1;
+            }
+            if (nameA > nameB){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        })
+        clearTable();
+        printTable();
+    }
 	
-        id.onclick=function(){
-            tasks.sort(sortAgeFunction)
-            function sortAgeFunction(a,b){
-                return a.id-b.id;
-            }
-            clearTable();
-            printTable();
+    id.onclick=function(){
+        tasks.sort(sortAgeFunction)
+        function sortAgeFunction(a,b){
+            return a.id-b.id;
         }
-	   
-        prior.onclick=function(){
-            tasks.sort(sortPriorFunction)
-            function sortPriorFunction(a,b){
-                return a.priority-b.priority;
-            }
-            clearTable();
-            printTable();
+        clearTable();
+        printTable();
+    }
+	
+    prior.onclick=function(){
+        tasks.sort(sortPriorFunction)
+        function sortPriorFunction(a,b){
+            return a.priority-b.priority;
         }
+        clearTable();
+        printTable();
+    }
 		
-        due.onclick=function(){
-            tasks.sort(sortPriorFunction)
-            function sortPriorFunction(a,b){
-                return a.priority-b.priority;
-            }
-            clearTable();
-            printTable();
+    due.onclick=function(){
+        tasks.sort(sortPriorFunction)
+        function sortPriorFunction(a,b){
+            return a.priority-b.priority;
         }
-    </script>
+        clearTable();
+        printTable();
+    }
+</script>
 </body>
 </html>
-
