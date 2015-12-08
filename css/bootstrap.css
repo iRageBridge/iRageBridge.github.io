@@ -15,12 +15,12 @@ html {
 #tableCenter{
 	margin-right:auto;
 	margin-left:auto;
-	width: 300px;	
+	width: 100%;	
 }
 
 body {
   margin: 0;
-  width: 400px;
+  width: 100%;
   margin-left:auto;
   margin-right:auto;
 }

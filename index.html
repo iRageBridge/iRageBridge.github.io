@@ -6,7 +6,7 @@
 <link rel="shortcut icon" href="images/task.png" alt="tab Icon">
 <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
 <body id="mainBody">
-<div class="navbar navbar-default navbar-fixed-top" style="width: 400px; margin-left:auto; margin-right:auto; background-color:#FFC;">
+<div class="navbar navbar-default navbar-fixed-top" style="width: 100%; margin-left:auto; margin-right:auto; background-color:#FFC;">
 	<div class="container" id="tableCenter">
   		<div class="navbar-header">
           	<a href="index.html" class="navbar-brand">Task Manager</a><br/><br/>
@@ -20,11 +20,12 @@
 	<br/><br/>Enter Task Decription Here:<br/><input type="text" id="descInput" class="form-control" placeholder="Description" aria-describedby="basic-addon-1"><br/><br/>
 	Enter Task Priority Here:<br/><input type="number" id="priorInput" value=1 class="form-control" placeholder="Priority" aria-describedby="basic-addon-1"><br/><br/>
 	Enter Task Due Date Here:<br/><input type="date" id="dateInput" class="form-control" placeholder="Due Date" aria-describedby="basic-addon-1"><br/><br/>
-    <br/><button id="enter" class="btn btn-default">Add Task</button>
-    <a href="index.html"><button id="clear" class="btn btn-default" style="float: right;">Clear Schedule</button></a>
+    <br/><button id="enter" class="btn btn-default" style="margin: 5px;">Add Task</button>
+    <a href="index.html"><button id="clear" href="index.html" class="btn btn-default" style="margin: 5px;">Clear Schedule</button></a>
 </div>
 
 <script>
+	window.onload = printTable;
  	var info=document.createElement("h3");
     info.innerHTML="Task Manager Shown Below:";
 	var mainBody=document.getElementById("mainBody");
@@ -50,9 +51,9 @@
 	del.innerHTML="Delete?";
 	var mainBody=document.getElementById("mainBody");
 	var tasks=[];
-	
+	var keyinput= "myTask"; 
+		
 	document.getElementById("enter").onclick= function(){	
-		var keyinput= "myTask";    
         var randomNumber = (Math.random() * 10) + 1;
 		randomNumber=Math.round(randomNumber);
         var task={
@@ -62,6 +63,7 @@
 			dueDate: document.getElementById("dateInput").value.toString(),
         };
 		tasks.push(task);  
+		printTable();
         if(typeof(window.localStorage)!="undefined"){
             window.localStorage.setItem(keyinput,JSON.stringify(tasks));	
 		}
@@ -69,25 +71,20 @@
 		else{
 			alert("window.localStorage, not defined");
 		}
-		printTable();
     }
    
 	function clearTable(){
 		peopleTable.innerHTML="";
     }
 	
-	function clearStorage(){
-		localStorage.clear();
-	}
-	
 	document.getElementById("clear").onclick=function(){
-		clearStorage();
+		localStorage.clear();
 		clearTable();
 	}
-    
-	window.onload = printTable();
-	var myTasks = JSON.parse(localStorage.getItem("myTask"));
+
+	
     function printTable(){
+		var myTasks = JSON.parse(localStorage.getItem("myTask"));
         clearTable();
 		mainBody.appendChild(info);
         mainBody.appendChild(peopleTable);
@@ -127,16 +124,16 @@
 			peopleTable.appendChild(newRow);						
 			 
             deleteRowButton.onclick=function(){
-				alert("This row will be deleted!");
 				var j = this.parentNode.parentNode.rowIndex;
                 peopleTable.deleteRow(j-1);
 				tasks.splice(j-1,1);
+				window.localStorage.setItem(keyinput,JSON.stringify(tasks));
                 clearTable();
 				printTable();
 			}
     	}		
     }
-    
+	
     desc.onclick=function(){
         tasks.sort(function(a,b){
             var nameA=a.description.toLowerCase();
