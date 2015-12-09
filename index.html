@@ -7,8 +7,9 @@
 <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
 <body id="mainBody">
 <br/><br/><br/><br/>
-<a href="#addTask"><button class="btn btn-success" style="width: 1080px; height: 600px; font-size:200px">Add Task</button></a>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<a href="#addTask"><button class="btn btn-success" style="width: 500px; margin: 5px; height: 600px; font-size:50px">Add Task</button></a>
+<a href="#table"><button class="btn btn-success" style="width: 500px; margin: 5px; height: 600px; font-size:50px">View Schedule</button></a>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>.<br/><br/><br/><br/>
 
 <div class="navbar navbar-default navbar-fixed-top" style="width: 1080px; margin-left:auto; margin-right:auto; background-color:#FFC;">
 	<div class="container" id="tableCenter">
@@ -66,7 +67,7 @@
 	var addAnchor = document.createElement("a");
 	addAnchor.setAttribute("href", "#addTask");
 	var addAnother = document.createElement("button");
-	addAnother.setAttribute("style", "height: 300px; width: 1080px");
+	addAnother.setAttribute("style", "height: 300px; width: 1080px; font-size: 100px;");
 	addAnother.setAttribute("class", "btn btn-success");
 	addAnother.innerHTML="Add Another Task";
 		
@@ -85,7 +86,6 @@
             window.localStorage.setItem(keyinput,JSON.stringify(tasks));	
 		}
 	
-
 		else{
 			alert("window.localStorage, not defined");
 		}
