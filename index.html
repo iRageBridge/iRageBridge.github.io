@@ -60,6 +60,15 @@
 	var keyinput= "myTask";
 	var space = document.createElement("div");
 	space.setAttribute("style", "height: 700px;");
+	var space2 = document.createElement("div");
+	space2.setAttribute("style", "height: 100px;");
+	mainBody.appendChild(space2);
+	var addAnchor = document.createElement("a");
+	addAnchor.setAttribute("href", "#addTask");
+	var addAnother = document.createElement("button");
+	addAnother.setAttribute("style", "height: 300px; width: 1080px");
+	addAnother.setAttribute("class", "btn btn-success");
+	addAnother.innerHTML="Add Another Task";
 		
 	document.getElementById("enter").onclick= function(){	
         var randomNumber = (Math.random() * 10) + 1;
@@ -76,6 +85,7 @@
             window.localStorage.setItem(keyinput,JSON.stringify(tasks));	
 		}
 	
+
 		else{
 			alert("window.localStorage, not defined");
 		}
@@ -95,6 +105,7 @@
 		var myTasks = JSON.parse(localStorage.getItem("myTask"));
         clearTable();
 		mainBody.appendChild(info);
+		mainBody.appendChild(space2);
         mainBody.appendChild(peopleTable);
         peopleTable.appendChild(tableBody);
         tableBody.appendChild(heading);
@@ -140,6 +151,8 @@
 				printTable();
 			}
     	}
+		mainBody.appendChild(addAnchor);
+		addAnchor.appendChild(addAnother);
 		mainBody.appendChild(space);		
     }
 	
