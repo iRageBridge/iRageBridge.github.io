@@ -2,76 +2,81 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Retrieve Task</title>
+<title>Task Manager Online</title>
 <link rel="shortcut icon" href="images/task.png" alt="tab Icon">
 <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
 <body id="mainBody">
 <br/><br/><br/><br/>
-<a href="#addTask"><button class="btn btn-success" style="width: 500px; margin: 5px; height: 600px; font-size:50px">Add Task</button></a>
-<a href="#table"><button class="btn btn-success" style="width: 500px; margin: 5px; height: 600px; font-size:50px">View Schedule</button></a>
+<a href="#addTask"><button class="btn btn-success" style="width: 500px; margin: 5px; height: 600px; font-size:50px;">Add Task</button></a>
+<a href="#table"><button class="btn btn-success" style="width: 500px; margin: 5px; height: 600px; font-size:50px;">View Schedule</button></a>
+
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>.<br/><br/><br/><br/>
 
 <div class="navbar navbar-default navbar-fixed-top" style="width: 1080px; margin-left:auto; margin-right:auto; background-color:#FFC;">
 	<div class="container" id="tableCenter">
   		<div class="navbar-header">
-          	<a href="index.html" class="navbar-brand">Task Manager</a><br/><br/>
+          	<a href="index.html" class="navbar-brand" style="font-size:45px";>Task Manager</a><br/><br/>
         </div>
     </div>
 </div>
 
-
 <a name="addTask"></a>
+
 <br/><br/><br/><br/>.<br/><br/><br/><br/>
-<div id="border" class="input-group" style="background-color:#FFC;">
+
+<div id="border" class="input-group" style="background-color:#FFC; font-size:30px;">
 	<span class="input-group-addon" id="basic-addon-1" style="background-color:#09F;"></span>
-	<br/><br/>Enter Task Decription Here:<br/><input type="text" id="descInput" class="form-control" placeholder="Description" aria-describedby="basic-addon-1"><br/><br/>
-	Enter Task Priority Here:<br/><input type="number" id="priorInput" value=1 class="form-control" placeholder="Priority" aria-describedby="basic-addon-1"><br/><br/>
-	Enter Task Due Date Here:<br/><input type="date" id="dateInput" class="form-control" placeholder="Due Date" aria-describedby="basic-addon-1"><br/><br/>
-    <br/><a href="#table"><button id="enter" class="btn btn-default" style="margin: 5px;">Add Task</button></a>
-    <a href="index.html"><button id="clear" href="index.html" class="btn btn-default" style="margin: 5px;">Clear Schedule</button></a>
+	<br/><br/>Enter Task Decription Here:<br/><input type="text" id="descInput" class="form-control" placeholder="Description" aria-describedby="basic-addon-1" style="padding:50px; font-size:50px;"><br/><br/>
+	Enter Task Priority Here:<br/><input type="number" id="priorInput" value=1 class="form-control" placeholder="Priority" aria-describedby="basic-addon-1" style="width: 1050px; height: 100px; font-size:50px;"><br/><br/>
+	Enter Task Due Date Here:<br/><input type="date" id="dateInput" class="form-control" placeholder="Due Date" aria-describedby="basic-addon-1" style="padding:50px; font-size:50px;"><br/><br/>
+    <br/><a href="#table"><button id="enter" class="btn btn-default" style="margin: 5px; padding: 50px; width: 515px; font-size:50px">Add Task</button></a>
+    <a href="index.html"><button id="clear" href="index.html" class="btn btn-default" style="margin: 5px; padding: 50px; width: 515px; font-size:50px">Clear Schedule</button></a>
 </div>
 
 <script>
 	window.onload = printTable;
  	var info=document.createElement("h3");
-    info.innerHTML="Task Manager Shown Below:";
 	var mainBody=document.getElementById("mainBody");
 	var peopleTable=document.createElement("table");
-	peopleTable.setAttribute("id", "tableDesign");
-    peopleTable.setAttribute("class", "table");
-	peopleTable.setAttribute("style", "background-color:#FFC;");
 	var tableBody=document.createElement("tbody");
 	var heading=document.createElement("tr");
 	var id=document.createElement("th");
-	id.setAttribute("id", "sortID");
 	var desc=document.createElement("th");
-	desc.setAttribute("id", "sortDescription");
 	var prior=document.createElement("th");
-	prior.setAttribute("id", "sortPriority");
 	var due=document.createElement("th");
-	due.setAttribute("id", "sortDate");
 	var del=document.createElement("th");
+	var mainBody=document.getElementById("mainBody");
+	var tasks=[];
+	var keyinput= "myTask";
+	var space = document.createElement("div");
+	var space2 = document.createElement("div");
+	var addAnchor = document.createElement("a");
+	var addAnother = document.createElement("button");
+	tableBody.setAttribute("style", "font-size:30px;");
+    info.innerHTML="Task Manager Shown Below:";
+	peopleTable.setAttribute("id", "tableDesign");
+    peopleTable.setAttribute("class", "table");
+	peopleTable.setAttribute("style", "background-color:#FFC;");
+	id.setAttribute("id", "sortID");
+	desc.setAttribute("id", "sortDescription");
+	prior.setAttribute("id", "sortPriority");
+	due.setAttribute("id", "sortDate");
 	id.innerHTML="ID";
 	desc.innerHTML="Description";
 	prior.innerHTML="Priority";
 	due.innerHTML="Due Date";
 	del.innerHTML="Delete?";
-	var mainBody=document.getElementById("mainBody");
-	var tasks=[];
-	var keyinput= "myTask";
-	var space = document.createElement("div");
 	space.setAttribute("style", "height: 700px;");
-	var space2 = document.createElement("div");
 	space2.setAttribute("style", "height: 100px;");
 	mainBody.appendChild(space2);
-	var addAnchor = document.createElement("a");
 	addAnchor.setAttribute("href", "#addTask");
-	var addAnother = document.createElement("button");
 	addAnother.setAttribute("style", "height: 300px; width: 1080px; font-size: 100px;");
 	addAnother.setAttribute("class", "btn btn-success");
 	addAnother.innerHTML="Add Another Task";
 		
-	document.getElementById("enter").onclick= function(){	
+	document.getElementById("enter").onclick= enterTask;
+	
+	function enterTask(){
         var randomNumber = (Math.random() * 10) + 1;
 		randomNumber=Math.round(randomNumber);
         var task={
@@ -90,19 +95,9 @@
 			alert("window.localStorage, not defined");
 		}
     }
-   
-	function clearTable(){
-		peopleTable.innerHTML="";
-    }
-	
-	document.getElementById("clear").onclick=function(){
-		localStorage.clear();
-		clearTable();
-	}
-
 	
     function printTable(){
-		var myTasks = JSON.parse(localStorage.getItem("myTask"));
+		var myTask = JSON.parse(localStorage.getItem("myTask"));
         clearTable();
 		mainBody.appendChild(info);
 		mainBody.appendChild(space2);
@@ -116,6 +111,7 @@
         heading.appendChild(del);
         for(var i = 0; i < tasks.length; i++){
             var newRow=document.createElement("tr"); 
+			newRow.setAttribute("style", "font-size:30px;");
 			var taskID=document.createElement("td");
 			taskID.innerHTML=tasks[i].id;
 			newRow.appendChild(taskID);
@@ -135,6 +131,7 @@
 			var deleteRowButton=document.createElement("button");
 			deleteRowButton.setAttribute("id", "deleteButton");
 			deleteRowButton.setAttribute("class", "btn btn-default");
+			deleteRowButton.setAttribute("style", "width: 120px; height 50px; font-size:30px;");
 			deleteRowButton.innerHTML="Delete";
 				    
 			var deleteRow=document.createElement("td");
@@ -155,6 +152,15 @@
 		addAnchor.appendChild(addAnother);
 		mainBody.appendChild(space);		
     }
+	
+	function clearTable(){
+		peopleTable.innerHTML="";
+    }
+	
+	document.getElementById("clear").onclick=function(){
+		localStorage.clear();
+		clearTable();
+	}
 	
     desc.onclick=function(){
         tasks.sort(function(a,b){
@@ -222,12 +228,13 @@
         clearTable();
         printTable();
     }
-	
 
 </script>
 <script src="js/jQuery.js"></script>
 <script src="js/bootstrap.js"></script>
 <a name="table"></a>
+
 <br/><br/><br/><br/><br/<br/><br/><br/><br/><br/><br/<br/><br/><br/><br/><br/<br/><br/><br/><br/<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
 </body>
 </html>
