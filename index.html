@@ -58,6 +58,8 @@
 	var mainBody=document.getElementById("mainBody");
 	var tasks=[];
 	var keyinput= "myTask";
+	var space = document.createElement("div");
+	space.setAttribute("style", "height: 700px;");
 		
 	document.getElementById("enter").onclick= function(){	
         var randomNumber = (Math.random() * 10) + 1;
@@ -137,7 +139,8 @@
                 clearTable();
 				printTable();
 			}
-    	}		
+    	}
+		mainBody.appendChild(space);		
     }
 	
     desc.onclick=function(){
