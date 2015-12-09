@@ -6,6 +6,10 @@
 <link rel="shortcut icon" href="images/task.png" alt="tab Icon">
 <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
 <body id="mainBody">
+<br/><br/><br/><br/>
+<a href="#addTask"><button class="btn btn-success" style="padding:170px;">Add Task</button></a>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
 <div class="navbar navbar-default navbar-fixed-top" style="width: 100%; margin-left:auto; margin-right:auto; background-color:#FFC;">
 	<div class="container" id="tableCenter">
   		<div class="navbar-header">
@@ -14,13 +18,15 @@
     </div>
 </div>
 
-<br/><br/><br/><br/>
+
+<a name="addTask"></a>
+<br/><br/><br/><br/>.<br/><br/><br/><br/>
 <div id="border" class="input-group" style="background-color:#FFC;">
 	<span class="input-group-addon" id="basic-addon-1" style="background-color:#09F;"></span>
 	<br/><br/>Enter Task Decription Here:<br/><input type="text" id="descInput" class="form-control" placeholder="Description" aria-describedby="basic-addon-1"><br/><br/>
 	Enter Task Priority Here:<br/><input type="number" id="priorInput" value=1 class="form-control" placeholder="Priority" aria-describedby="basic-addon-1"><br/><br/>
 	Enter Task Due Date Here:<br/><input type="date" id="dateInput" class="form-control" placeholder="Due Date" aria-describedby="basic-addon-1"><br/><br/>
-    <br/><button id="enter" class="btn btn-default" style="margin: 5px;">Add Task</button>
+    <br/><a href="#table"><button id="enter" class="btn btn-default" style="margin: 5px;">Add Task</button></a>
     <a href="index.html"><button id="clear" href="index.html" class="btn btn-default" style="margin: 5px;">Clear Schedule</button></a>
 </div>
 
@@ -51,7 +57,7 @@
 	del.innerHTML="Delete?";
 	var mainBody=document.getElementById("mainBody");
 	var tasks=[];
-	var keyinput= "myTask"; 
+	var keyinput= "myTask";
 		
 	document.getElementById("enter").onclick= function(){	
         var randomNumber = (Math.random() * 10) + 1;
@@ -200,8 +206,12 @@
         clearTable();
         printTable();
     }
+	
+
 </script>
 <script src="js/jQuery.js"></script>
 <script src="js/bootstrap.js"></script>
+<a name="table"></a>
+<br/><br/><br/><br/><br/<br/><br/><br/><br/><br/><br/<br/><br/><br/><br/><br/<br/><br/><br/><br/<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 </body>
 </html>
