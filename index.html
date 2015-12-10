@@ -7,15 +7,15 @@
 <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
 <body id="mainBody">
 <br/><br/><br/><br/>
-<a href="#addTask"><button class="btn btn-success" style="width: 500px; margin: 5px; height: 600px; font-size:50px;">Add Task</button></a>
-<a href="#table"><button class="btn btn-success" style="width: 500px; margin: 5px; height: 600px; font-size:50px;">View Schedule</button></a>
+<a href="#addTask"><button class="btn btn-success" style="width: 500px; margin: 5px; height: 600px; font-size:50px">Add Task</button></a>
+<a href="#table"><button class="btn btn-success" style="width: 500px; margin: 5px; height: 600px; font-size:50px">View Schedule</button></a>
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>.<br/><br/><br/><br/>
 
 <div class="navbar navbar-default navbar-fixed-top" style="width: 1080px; margin-left:auto; margin-right:auto; background-color:#FFC;">
 	<div class="container" id="tableCenter">
   		<div class="navbar-header">
-          	<a href="index.html" class="navbar-brand" style="font-size:45px";>Task Manager</a><br/><br/>
+          	<a href="index.html" class="navbar-brand">Task Manager</a><br/><br/>
         </div>
     </div>
 </div>
@@ -24,13 +24,13 @@
 
 <br/><br/><br/><br/>.<br/><br/><br/><br/>
 
-<div id="border" class="input-group" style="background-color:#FFC; font-size:30px;">
+<div id="border" class="input-group" style="background-color:#FFC;">
 	<span class="input-group-addon" id="basic-addon-1" style="background-color:#09F;"></span>
-	<br/><br/>Enter Task Decription Here:<br/><input type="text" id="descInput" class="form-control" placeholder="Description" aria-describedby="basic-addon-1" style="padding:50px; font-size:50px;"><br/><br/>
-	Enter Task Priority Here:<br/><input type="number" id="priorInput" value=1 class="form-control" placeholder="Priority" aria-describedby="basic-addon-1" style="width: 1050px; height: 100px; font-size:50px;"><br/><br/>
-	Enter Task Due Date Here:<br/><input type="date" id="dateInput" class="form-control" placeholder="Due Date" aria-describedby="basic-addon-1" style="padding:50px; font-size:50px;"><br/><br/>
-    <br/><a href="#table"><button id="enter" class="btn btn-default" style="margin: 5px; padding: 50px; width: 515px; font-size:50px">Add Task</button></a>
-    <a href="index.html"><button id="clear" href="index.html" class="btn btn-default" style="margin: 5px; padding: 50px; width: 515px; font-size:50px">Clear Schedule</button></a>
+	<br/><br/>Enter Task Decription Here:<br/><input type="text" id="descInput" class="form-control" placeholder="Description" aria-describedby="basic-addon-1"><br/><br/>
+	Enter Task Priority Here:<br/><input type="number" id="priorInput" value=1 class="form-control" placeholder="Priority" aria-describedby="basic-addon-1"><br/><br/>
+	Enter Task Due Date Here:<br/><input type="date" id="dateInput" class="form-control" placeholder="Due Date" aria-describedby="basic-addon-1"><br/><br/>
+    <br/><a href="#table"><button id="enter" class="btn btn-default" style="margin: 5px;">Add Task</button></a>
+    <a href="index.html"><button id="clear" href="index.html" class="btn btn-default" style="margin: 5px;">Clear Schedule</button></a>
 </div>
 
 <script>
@@ -52,7 +52,29 @@
 	var space2 = document.createElement("div");
 	var addAnchor = document.createElement("a");
 	var addAnother = document.createElement("button");
-	tableBody.setAttribute("style", "font-size:30px;");
+	var deleteConfirmAnchor = document.createElement("a");
+	var deleteConfirm = document.createElement("button");
+	var returnToTableAnchor = document.createElement("a");
+	var returnToTable = document.createElement("button");
+	
+	
+	returnToTableAnchor.setAttribute("href","#table");
+	returnToTableAnchor.appendChild(returnToTable);
+	
+	
+	deleteConfirmAnchor.setAttribute("href","#table");
+	deleteConfirmAnchor.setAttribute("name","delete");
+	deleteConfirmAnchor.appendChild(deleteConfirm);
+	
+	deleteConfirm.setAttribute("class","btn btn-success");
+	deleteConfirm.setAttribute("style", "width: 500px; margin: 5px; height: 600px; font-size:50px;");
+	deleteConfirm.innerHTML="DELETE";
+	
+	returnToTable.setAttribute("class","btn btn-danger");
+	returnToTable.setAttribute("style", "width: 500px; margin: 5px; height: 600px; font-size:50px;");
+	returnToTable.innerHTML="RETURN TO TOP";
+	
+	
     info.innerHTML="Task Manager Shown Below:";
 	peopleTable.setAttribute("id", "tableDesign");
     peopleTable.setAttribute("class", "table");
@@ -111,7 +133,6 @@
         heading.appendChild(del);
         for(var i = 0; i < tasks.length; i++){
             var newRow=document.createElement("tr"); 
-			newRow.setAttribute("style", "font-size:30px;");
 			var taskID=document.createElement("td");
 			taskID.innerHTML=tasks[i].id;
 			newRow.appendChild(taskID);
@@ -129,28 +150,34 @@
 			newRow.appendChild(taskDueDate);
 					
 			var deleteRowButton=document.createElement("button");
+			var goToDelete = document.createElement("a");
+			goToDelete.setAttribute("href","#delete");
 			deleteRowButton.setAttribute("id", "deleteButton");
 			deleteRowButton.setAttribute("class", "btn btn-default");
-			deleteRowButton.setAttribute("style", "width: 120px; height 50px; font-size:30px;");
 			deleteRowButton.innerHTML="Delete";
 				    
 			var deleteRow=document.createElement("td");
-			deleteRow.appendChild(deleteRowButton);
+			goToDelete.appendChild(deleteRowButton);
+			deleteRow.appendChild(goToDelete);
 			newRow.appendChild(deleteRow);
-			peopleTable.appendChild(newRow);						
+			peopleTable.appendChild(newRow);				
 			 
             deleteRowButton.onclick=function(){
-				var j = this.parentNode.parentNode.rowIndex;
-                peopleTable.deleteRow(j-1);
-				tasks.splice(j-1,1);
-				window.localStorage.setItem(keyinput,JSON.stringify(tasks));
-                clearTable();
-				printTable();
-			}
+				deleteConfirm.onclick=function(){
+					var j = this.parentNode.parentNode.rowIndex;
+                	peopleTable.deleteRow(j-1);
+					tasks.splice(j-1,1);
+					window.localStorage.setItem(keyinput,JSON.stringify(tasks));
+                	clearTable();
+					printTable();
+				}
+			}	
     	}
 		mainBody.appendChild(addAnchor);
 		addAnchor.appendChild(addAnother);
-		mainBody.appendChild(space);		
+		mainBody.appendChild(space);	
+		mainBody.appendChild(deleteConfirmAnchor);
+		mainBody.appendChild(returnToTableAnchor);
     }
 	
 	function clearTable(){
@@ -235,6 +262,5 @@
 <a name="table"></a>
 
 <br/><br/><br/><br/><br/<br/><br/><br/><br/><br/><br/<br/><br/><br/><br/><br/<br/><br/><br/><br/<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
 </body>
 </html>
