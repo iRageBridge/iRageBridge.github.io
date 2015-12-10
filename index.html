@@ -35,6 +35,9 @@
 
 <script>
 	window.onload = printTable;
+	
+	//Variables
+	
  	var info=document.createElement("div");
 	var mainBody=document.getElementById("mainBody");
 	var peopleTable=document.createElement("table");
@@ -46,7 +49,7 @@
 	var due=document.createElement("th");
 	var del=document.createElement("th");
 	var mainBody=document.getElementById("mainBody");
-	var tasks=[];
+	var myTasks=[];
 	var keyinput= "myTask";
 	var space = document.createElement("div");
 	var space2 = document.createElement("div");
@@ -56,6 +59,8 @@
 	var deleteConfirm = document.createElement("button");
 	var returnToTableAnchor = document.createElement("a");
 	var returnToTable = document.createElement("button");
+	
+	//Setting Attributes
 	
 	info.setAttribute("style","font-size:50px;");
 	heading.setAttribute("style", "font-size:30px;");
@@ -102,80 +107,83 @@
 			priority: document.getElementById("priorInput").value,
 			dueDate: document.getElementById("dateInput").value.toString(),
         };
-		tasks.push(task);  
-		printTable();
+		myTasks.push(task);  
         if(typeof(window.localStorage)!="undefined"){
-            window.localStorage.setItem(keyinput,JSON.stringify(tasks));	
+            window.localStorage.setItem(keyinput,JSON.stringify(myTasks));	
 		}
 	
 		else{
 			alert("window.localStorage, not defined");
 		}
+		printTable();
+
     }
 	
     function printTable(){
-		var myTask = JSON.parse(localStorage.getItem("myTask"));
-        clearTable();
-		mainBody.appendChild(info);
-		mainBody.appendChild(space2);
-        mainBody.appendChild(peopleTable);
-        peopleTable.appendChild(tableBody);
-        tableBody.appendChild(heading);
-        heading.appendChild(id);
-        heading.appendChild(desc);
-        heading.appendChild(prior);
-        heading.appendChild(due);
-        heading.appendChild(del);
-        for(var i = 0; i < tasks.length; i++){
-            var newRow=document.createElement("tr"); 
-			newRow.setAttribute("style", "font-size:30px;");
-			var taskID=document.createElement("td");
-			taskID.innerHTML=tasks[i].id;
-			newRow.appendChild(taskID);
-				    
-			var taskDescription=document.createElement("td");
-			taskDescription.innerHTML=tasks[i].description;
-			newRow.appendChild(taskDescription);
+		var myTasks = JSON.parse(localStorage.getItem("myTask"));
+		if(localStorage.getItem("myTasks")==null || localStorage.getItem("myTasks")!=null){
+        	clearTable();
+			mainBody.appendChild(info);
+			mainBody.appendChild(space2); 
+        	mainBody.appendChild(peopleTable);
+        	peopleTable.appendChild(tableBody);
+        	tableBody.appendChild(heading);
+        	heading.appendChild(id);
+        	heading.appendChild(desc);
+        	heading.appendChild(prior);
+        	heading.appendChild(due);
+        	heading.appendChild(del);
+        	for(var i = 0; i < myTasks.length; i++){
+            	var newRow=document.createElement("tr"); 
+				newRow.setAttribute("style", "font-size:30px;");
+				var taskID=document.createElement("td");
+				taskID.innerHTML=myTasks[i].id;
+				newRow.appendChild(taskID);
+					    
+				var taskDescription=document.createElement("td");
+				taskDescription.innerHTML=myTasks[i].description;
+				newRow.appendChild(taskDescription);
+						
+				var taskPriority=document.createElement("td");
+				taskPriority.innerHTML=myTasks[i].priority;
+				newRow.appendChild(taskPriority);
 					
-			var taskPriority=document.createElement("td");
-			taskPriority.innerHTML=tasks[i].priority;
-			newRow.appendChild(taskPriority);
-				
-			var taskDueDate=document.createElement("td");
-			taskDueDate.innerHTML=tasks[i].dueDate;
-			newRow.appendChild(taskDueDate);
-					
-			var deleteRowButton=document.createElement("button");
-			var goToDelete = document.createElement("a");
-			goToDelete.setAttribute("href","#delete");
-			deleteRowButton.setAttribute("id", "deleteButton");
-			deleteRowButton.setAttribute("class", "btn btn-default");
-			deleteRowButton.innerHTML="Delete";
-				    
-			var deleteRow=document.createElement("td");
-			deleteRowButton.setAttribute("style", "width: 120px; height 50px; font-size:30px;");
-			goToDelete.appendChild(deleteRowButton);
-			deleteRow.appendChild(goToDelete);
-			newRow.appendChild(deleteRow);
-			peopleTable.appendChild(newRow);				
-			 
-            deleteRowButton.onclick=function(){
-				deleteConfirm.onclick=function(){
-					var j = this.parentNode.parentNode.parentNode.rowIndex;
-                	peopleTable.deleteRow(j-1);
-					tasks.splice(j-1,1);
-					window.localStorage.setItem(keyinput,JSON.stringify(tasks));
-                	clearTable();
-					printTable();
-				}
-			}	
+				var taskDueDate=document.createElement("td");
+				taskDueDate.innerHTML=myTasks[i].dueDate;
+				newRow.appendChild(taskDueDate);
+						
+				var deleteRowButton=document.createElement("button");
+				var goToDelete = document.createElement("a");
+				goToDelete.setAttribute("href","#delete");
+				deleteRowButton.setAttribute("id", "deleteButton");
+				deleteRowButton.setAttribute("class", "btn btn-default");
+				deleteRowButton.innerHTML="Delete";
+					    
+				var deleteRow=document.createElement("td");
+				deleteRowButton.setAttribute("style", "width: 120px; height 50px; font-size:30px;");
+				goToDelete.appendChild(deleteRowButton);
+				deleteRow.appendChild(goToDelete);
+				newRow.appendChild(deleteRow);
+				peopleTable.appendChild(newRow);				
+				 
+            	deleteRowButton.onclick=function(){
+					deleteConfirm.onclick=function(){
+						var j = this.parentNode.parentNode.parentNode.rowIndex;
+            	    	peopleTable.deleteRow(j-1);
+						myTasks.splice(j-1,1);
+						window.localStorage.setItem(keyinput,JSON.stringify(myTasks));
+                		clearTable();
+						printTable();
+					}	
+				}	
+    		}
+			mainBody.appendChild(addAnchor);
+			addAnchor.appendChild(addAnother);
+			mainBody.appendChild(space);	
+			mainBody.appendChild(deleteConfirmAnchor);
+			mainBody.appendChild(returnToTableAnchor);
     	}
-		mainBody.appendChild(addAnchor);
-		addAnchor.appendChild(addAnother);
-		mainBody.appendChild(space);	
-		mainBody.appendChild(deleteConfirmAnchor);
-		mainBody.appendChild(returnToTableAnchor);
-    }
+	}
 	
 	function clearTable(){
 		peopleTable.innerHTML="";
@@ -187,7 +195,7 @@
 	}
 	
     desc.onclick=function(){
-        tasks.sort(function(a,b){
+        myTasks.sort(function(a,b){
             var nameA=a.description.toLowerCase();
             var nameB=b.description.toLowerCase();
 		
@@ -209,7 +217,7 @@
     }
 	
     id.onclick=function(){
-        tasks.sort(sortAgeFunction)
+        myTasks.sort(sortAgeFunction)
 		
         function sortAgeFunction(a,b){
             return a.id-b.id;
@@ -220,7 +228,7 @@
     }
 	
     prior.onclick=function(){
-        tasks.sort(sortPriorFunction)
+        myTasks.sort(sortPriorFunction)
 		
         function sortPriorFunction(a,b){
 			
@@ -232,7 +240,7 @@
     }
 		
     due.onclick=function(){
-        tasks.sort(function(a,b){
+        myTasks.sort(function(a,b){
             var nameA=a.description.toLowerCase();
             var nameB=b.description.toLowerCase();
 		
