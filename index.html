@@ -1,271 +1,654 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Task Manager Online</title>
-<link rel="shortcut icon" href="images/task.png" alt="tab Icon">
-<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
-<body id="mainBody">
-<br/><br/><br/><br/>
-<a href="#addTask"><button class="btn btn-success" style="width: 500px; margin: 5px; height: 600px; font-size:50px">Add Task</button></a>
-<a href="#table"><button class="btn btn-success" style="width: 500px; margin: 5px; height: 600px; font-size:50px">View Schedule</button></a>
+<title>Pen and Pixel</title>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/prettyPhoto.css" media="screen" title="prettyPhoto stylesheet" charset="utf-8"/>
+<script src="js/jquery-1.11.1.js" type="text/javascript"></script>
+<script src="js/jquery.isotope.js" type="text/javascript"></script>
+<script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/npm.js" type="text/javascript"></script>
 
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>.<br/><br/><br/><br/>
 
-<div class="navbar navbar-default navbar-fixed-top" style="width: 1080px; margin-left:auto; margin-right:auto; background-color:#FFC;">
-	<div class="container" id="tableCenter">
-  		<div class="navbar-header">
-          	<a href="index.html" class="navbar-brand" style="font-size:45px";>Task Manager</a><br/><br/>
-        </div>
+</head>
+<body>
+    <div id="landing">
     </div>
+    
+    <nav id="navbar-main" class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        <a class="navbar-brand" href="#">Pen and Pixel 2016</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+            <a href="#gallery">Gallery</a>
+          </li>
+        <li>
+            <a href="#info">Informaton</a>
+          </li>
+        <li>
+            <a href="#contact">Contact</a>
+          </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+<!--<div id="catagoryContainer">
+    <a name="menu"></a>
+    <div><a href="#gallery" id="all"><img src="images/Banners/allCatagories.jpg"/></a></div>
+    <div><a href="#gallery" id="games"><img src="images/Banners/games.jpg"/></a></div>
+    <div><a href="#gallery" id="animation"><img src="images/Banners/animation.jpg"/></a></div>
+    <div><a href="#gallery" id="photography"><img src="images/Banners/photography.jpg"/></a></div>
+    <div><a href="#gallery" id="webApps"><img src="images/Banners/webApps.jpg"/></a></div>
+    <div><a href="#gallery" id="sound"><img src="images/Banners/sound.jpg"/></a></div>
+    <div><a href="#gallery" id="video"><img src="images/Banners/video.jpg"/></a></div>
+    <div><a href="#gallery" id="graphic"><img src="images/Banners/graphicDesign.jpg"/></a></div>
+</div>-->
+    
+<a name="gallery"></a>
+<div class="space"></div>
+    <h1>Pen and Pixel Gallery</h1>
+<div class="portfolioFilter">
+    
+    <a href="#" data-filter="*" class="current" id="allMenu">All Categories</a>
+    <a href="#" id="gamesMenu" data-filter=".games">Games</a>
+    <a href="#" id="animationMenu" data-filter=".animation">Animation</a>
+    <a href="#" id="photographyMenu" data-filter=".photography">Photography</a>
+    <a href="#" id="webAppsMenu" data-filter=".webApps">Web Applications</a>
+    <a href="#" id="soundMenu" data-filter=".sound">Sound Design</a>
+    <a href="#" id="videoMenu" data-filter=".video">Video</a>
+    <a href="#" id="graphicMenu" data-filter=".graphicDesign">Graphic Design</a>
+    <a href="#" id="kineticMenu" data-filter=".kinetic">Kinetic Text</a>
 </div>
 
-<a name="addTask"></a>
+<div class="portfolioContainer">
 
-<br/><br/><br/><br/>.<br/><br/><br/><br/><br/><br/>
-
-<div id="border" class="input-group" style="background-color:#FFC; font-size:30px;">
-	<span class="input-group-addon" id="basic-addon-1" style="background-color:#09F;"></span>
-	<br/><br/>Enter Task Decription Here:<br/><input type="text" id="descInput" class="form-control" placeholder="Description" aria-describedby="basic-addon-1" style="padding:50px; font-size:50px;"><br/><br/>
-	Enter Task Priority Here:<br/><input type="number" id="priorInput" value=1 class="form-control" placeholder="Priority" aria-describedby="basic-addon-1" style="width: 1050px; height: 100px; font-size:50px;"><br/><br/>
-	Enter Task Due Date Here:<br/><input type="date" id="dateInput" class="form-control" placeholder="Due Date" aria-describedby="basic-addon-1" style="width: 1050px; height: 100px; font-size:50px;"><br/><br/>
-    <br/><a href="#table"><button id="enter" class="btn btn-default" style="margin: 5px; padding: 50px; width: 515px; font-size:50px;">Add Task</button></a>
-    <a href="index.html"><button id="clear" href="index.html" class="btn btn-default" style="margin: 5px; padding: 50px; width: 515px; font-size:50px;">Clear Schedule</button></a>
+	<div class="games">
+        <a href="images/submissions/0.jpg" rel="prettyPhoto"><img src="images/submissions/0.jpg" alt="image"/></a>
+	</div>
+    <div class="games">
+        <a href="images/submissions/1.jpg" rel="prettyPhoto"><img src="images/submissions/1.jpg" alt="image"/></a>
+	</div>
+    <div class="animtion">
+        <a href="images/submissions/2.jpg" rel="prettyPhoto"><img src="images/submissions/2.jpg"alt="image"/></a>
+	</div>
+    <div class="games">
+        <a href="images/submissions/3.jpg" rel="prettyPhoto"><img src="images/submissions/3.jpg" alt="image"/></a>
+	</div>
+    <div class="graphicDesign">
+        <a href="images/submissions/4.jpg" rel="prettyPhoto"><img src="images/submissions/4.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/hi-res/5.jpg" rel="prettyPhoto"><img src="images/submissions/5.jpg" alt="image"/></a>
+	</div>
+    <div class="graphicDesign">
+        <a href="images/submissions/hi-res/6.jpg" rel="prettyPhoto"><img src="images/submissions/6.jpg" alt="image"/></a>
+	</div>
+    <div class="animation">
+        <a href="images/submissions/7.jpg" rel="prettyPhoto"><img src="images/submissions/7.jpg" alt="image"/></a>
+	</div>
+    <div class="photogrpahy">
+        <a href="images/submissions/hi-res/8jpg" rel="prettyPhoto"><img src="images/submissions/8.jpg" alt="image"/></a>
+	</div>
+    <div class="animation">
+        <a href="images/submissions/9jpg" rel="prettyPhoto"><img src="images/submissions/9.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/10.jpg" rel="prettyPhoto"><img src="images/submissions/10.jpg"alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/hi-res/11.jpg" rel="prettyPhoto"><img src="images/submissions/11.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/12.jpg" rel="prettyPhoto"><img src="images/submissions/12.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/13.jpg" rel="prettyPhoto"><img src="images/submissions/13.jpg" alt="image"/></a>
+	</div>
+    <div class="animation">
+        <a href="images/submissions/14.jpg" rel="prettyPhoto"><img src="images/submissions/14.jpg" alt="image"/></a>
+	</div>
+    <div class="graphicDesign">
+        <a href="images/submissions/15.jpg" rel="prettyPhoto"><img src="images/submissions/15.jpg" alt="image"/></a>
+	</div>
+    <div class="games">
+        <a href="images/submissions/swfs/16.swf?width=800&amp;height=450" rel="prettyPhoto" title="demo"><img src="images/submissions/16.jpg" alt="demo"/></a>
+	</div>
+    <div class="games">
+        <a href="images/submissions/17.jpg" rel="prettyPhoto"><img src="images/submissions/17.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/hi-res/18.jpg" rel="prettyPhoto"><img src="images/submissions/18.jpg"alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/hi-res/19.jpg" rel="prettyPhoto"><img src="images/submissions/19.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/hi-res/20.jpg" rel="prettyPhoto"><img src="images/submissions/20.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/hi-res/21.jpg" rel="prettyPhoto"><img src="images/submissions/21.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/hi-res/22.jpg" rel="prettyPhoto"><img src="images/submissions/22.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/23.jpg" rel="prettyPhoto"><img src="images/submissions/23.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/24.jpg" rel="prettyPhoto"><img src="images/submissions/24.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/25.jpg" rel="prettyPhoto"><img src="images/submissions/25.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/26.jpg" rel="prettyPhoto"><img src="images/submissions/26.jpg"alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/27.jpg" rel="prettyPhoto"><img src="images/submissions/27.jpg" alt="image"/></a>
+	</div>
+    <div class="sound">
+        <a href="images/submissions/28.jpg" rel="prettyPhoto"><img src="images/submissions/28.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/29.jpg" rel="prettyPhoto"><img src="images/submissions/29.jpg" alt="image"/></a>
+	</div>
+    <div class="graphicDesign">
+        <a href="images/submissions/30.jpg" rel="prettyPhoto"><img src="images/submissions/30.jpg" alt="image"/></a>
+	</div>
+    <div class="kinetic">
+        <a href="images/submissions/31.jpg" rel="prettyPhoto"><img src="images/submissions/31.jpg" alt="image"/></a>
+	</div>
+    <div class="games">
+        <a href="images/submissions/32.jpg" rel="prettyPhoto"><img src="images/submissions/32.jpg" alt="image"/></a>
+	</div>
+    <div class="animation">
+        <a href="images/submissions/33.jpg" rel="prettyPhoto"><img src="images/submissions/33.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/34.jpg" rel="prettyPhoto"><img src="images/submissions/34.jpg"alt="image"/></a>
+	</div>
+    <div class="webApps">
+        <a href="images/submissions/35.jpg" rel="prettyPhoto"><img src="images/submissions/35.jpg" alt="image"/></a>
+	</div>
+    <div class="sound">
+        <a href="images/submissions/36.jpg" rel="prettyPhoto"><img src="images/submissions/36.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/37.jpg" rel="prettyPhoto"><img src="images/submissions/37.jpg" alt="image"/></a>
+	</div>
+    <div class="graphicDesign">
+        <a href="images/submissions/38.jpg" rel="prettyPhoto"><img src="images/submissions/38.jpg" alt="image"/></a>
+	</div>
+    <div class="kinetic">
+        <a href="images/submissions/39.jpg" rel="prettyPhoto"><img src="images/submissions/39.jpg" alt="image"/></a>
+	</div>
+    <div class="games">
+        <a href="images/submissions/40.jpg" rel="prettyPhoto"><img src="images/submissions/40.jpg" alt="image"/></a>
+	</div>
+    <div class="animation">
+        <a href="images/submissions/41.jpg" rel="prettyPhoto"><img src="images/submissions/41.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/42.jpg" rel="prettyPhoto"><img src="images/submissions/42.jpg"alt="image"/></a>
+	</div>
+    <div class="webApps">
+        <a href="images/submissions/43.jpg" rel="prettyPhoto"><img src="images/submissions/43.jpg" alt="image"/></a>
+	</div>
+    <div class="sound">
+        <a href="images/submissions/44.jpg" rel="prettyPhoto"><img src="images/submissions/44.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/45.jpg" rel="prettyPhoto"><img src="images/submissions/45.jpg" alt="image"/></a>
+	</div>
+    <div class="graphicDesign">
+        <a href="images/submissions/46.jpg" rel="prettyPhoto"><img src="images/submissions/46.jpg" alt="image"/></a>
+	</div>
+    <div class="kinetic">
+        <a href="images/submissions/47.jpg" rel="prettyPhoto"><img src="images/submissions/47.jpg" alt="image"/></a>
+	</div>
+    <div class="games">
+        <a href="images/submissions/48.jpg" rel="prettyPhoto"><img src="images/submissions/48.jpg" alt="image"/></a>
+	</div>
+    <div class="animation">
+        <a href="images/submissions/49.jpg" rel="prettyPhoto"><img src="images/submissions/49.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/50.jpg" rel="prettyPhoto"><img src="images/submissions/50.jpg"alt="image"/></a>
+	</div>
+    <div class="webApps">
+        <a href="images/submissions/51.jpg" rel="prettyPhoto"><img src="images/submissions/51.jpg" alt="image"/></a>
+	</div>
+    <div class="sound">
+        <a href="images/submissions/52.jpg" rel="prettyPhoto"><img src="images/submissions/52.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/53.jpg" rel="prettyPhoto"><img src="images/submissions/53.jpg" alt="image"/></a>
+	</div>
+    <div class="graphicDesign">
+        <a href="images/submissions/54.jpg" rel="prettyPhoto"><img src="images/submissions/54.jpg" alt="image"/></a>
+	</div>
+    <div class="kinetic">
+        <a href="images/submissions/55.jpg" rel="prettyPhoto"><img src="images/submissions/55.jpg" alt="image"/></a>
+	</div>
+    <div class="games">
+        <a href="images/submissions/56.jpg" rel="prettyPhoto"><img src="images/submissions/56.jpg" alt="image"/></a>
+	</div>
+    <div class="animation">
+        <a href="images/submissions/57.jpg" rel="prettyPhoto"><img src="images/submissions/57.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/58.jpg" rel="prettyPhoto"><img src="images/submissions/58.jpg"alt="image"/></a>
+	</div>
+    <div class="webApps">
+        <a href="images/submissions/59.jpg" rel="prettyPhoto"><img src="images/submissions/59.jpg" alt="image"/></a>
+	</div>
+    <div class="sound">
+        <a href="images/submissions/60.jpg" rel="prettyPhoto"><img src="images/submissions/60.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/61.jpg" rel="prettyPhoto"><img src="images/submissions/61.jpg" alt="image"/></a>
+	</div>
+    <div class="graphicDesign">
+        <a href="images/submissions/62.jpg" rel="prettyPhoto"><img src="images/submissions/62.jpg" alt="image"/></a>
+	</div>
+    <div class="kinetic">
+        <a href="images/submissions/63.jpg" rel="prettyPhoto"><img src="images/submissions/63.jpg" alt="image"/></a>
+	</div>
+     <div class="graphicDesign">
+        <a href="images/submissions/64.jpg" rel="prettyPhoto"><img src="images/submissions/64.jpg" alt="image"/></a>
+	</div>
+    <div class="kinetic">
+        <a href="images/submissions/65.jpg" rel="prettyPhoto"><img src="images/submissions/65.jpg" alt="image"/></a>
+	</div>
+    <div class="games">
+        <a href="images/submissions/66.jpg" rel="prettyPhoto"><img src="images/submissions/66.jpg" alt="image"/></a>
+	</div>
+    <div class="animation">
+        <a href="images/submissions/67.jpg" rel="prettyPhoto"><img src="images/submissions/67.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/68.jpg" rel="prettyPhoto"><img src="images/submissions/68.jpg"alt="image"/></a>
+	</div>
+    <div class="webApps">
+        <a href="images/submissions/69.jpg" rel="prettyPhoto"><img src="images/submissions/69.jpg" alt="image"/></a>
+	</div>
+        <div class="photography">
+        <a href="images/submissions/70.jpg" rel="prettyPhoto"><img src="images/submissions/70.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/71.jpg" rel="prettyPhoto"><img src="images/submissions/71.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/72.jpg" rel="prettyPhoto"><img src="images/submissions/72.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/73.jpg" rel="prettyPhoto"><img src="images/submissions/73.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/74.jpg" rel="prettyPhoto"><img src="images/submissions/74.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/75.jpg" rel="prettyPhoto"><img src="images/submissions/75.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/76.jpg" rel="prettyPhoto"><img src="images/submissions/76.jpg"alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/77.jpg" rel="prettyPhoto"><img src="images/submissions/77.jpg" alt="image"/></a>
+	</div>
+    <div class="sound">
+        <a href="images/submissions/78.jpg" rel="prettyPhoto"><img src="images/submissions/78.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/79.jpg" rel="prettyPhoto"><img src="images/submissions/79.jpg" alt="image"/></a>
+    </div>
+    <div class="photography">
+        <a href="images/submissions/80.jpg" rel="prettyPhoto"><img src="images/submissions/80.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/81.jpg" rel="prettyPhoto"><img src="images/submissions/81.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/82.jpg" rel="prettyPhoto"><img src="images/submissions/82.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/83.jpg" rel="prettyPhoto"><img src="images/submissions/83.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/84.jpg" rel="prettyPhoto"><img src="images/submissions/84.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/85.jpg" rel="prettyPhoto"><img src="images/submissions/85.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/86.jpg" rel="prettyPhoto"><img src="images/submissions/86.jpg"alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/87.jpg" rel="prettyPhoto"><img src="images/submissions/87.jpg" alt="image"/></a>
+	</div>
+    <div class="sound">
+        <a href="images/submissions/88.jpg" rel="prettyPhoto"><img src="images/submissions/88.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/89.jpg" rel="prettyPhoto"><img src="images/submissions/89.jpg" alt="image"/></a>
+    </div>
+    <div class="photography">
+        <a href="images/submissions/90.jpg" rel="prettyPhoto"><img src="images/submissions/90.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/91.jpg" rel="prettyPhoto"><img src="images/submissions/91.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/92.jpg" rel="prettyPhoto"><img src="images/submissions/92.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/93.jpg" rel="prettyPhoto"><img src="images/submissions/93.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/94.jpg" rel="prettyPhoto"><img src="images/submissions/94.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/95.jpg" rel="prettyPhoto"><img src="images/submissions/95.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/96.jpg" rel="prettyPhoto"><img src="images/submissions/96.jpg"alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/97.jpg" rel="prettyPhoto"><img src="images/submissions/97.jpg" alt="image"/></a>
+	</div>
+    <div class="sound">
+        <a href="images/submissions/98.jpg" rel="prettyPhoto"><img src="images/submissions/98.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/99.jpg" rel="prettyPhoto"><img src="images/submissions/99.jpg" alt="image"/></a>
+    </div>        
+    <div class="photography">
+        <a href="images/submissions/100.jpg" rel="prettyPhoto"><img src="images/submissions/100.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/101.jpg" rel="prettyPhoto"><img src="images/submissions/101.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/102.jpg" rel="prettyPhoto"><img src="images/submissions/102.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/103.jpg" rel="prettyPhoto"><img src="images/submissions/103.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/104.jpg" rel="prettyPhoto"><img src="images/submissions/104.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/105.jpg" rel="prettyPhoto"><img src="images/submissions/105.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/106.jpg" rel="prettyPhoto"><img src="images/submissions/106.jpg"alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/107.jpg" rel="prettyPhoto"><img src="images/submissions/107.jpg" alt="image"/></a>
+	</div>
+    <div class="sound">
+        <a href="images/submissions/108.jpg" rel="prettyPhoto"><img src="images/submissions/108.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/109.jpg" rel="prettyPhoto"><img src="images/submissions/109.jpg" alt="image"/></a>
+    </div>
+    <div class="photography">
+        <a href="images/submissions/110.jpg" rel="prettyPhoto"><img src="images/submissions/110.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/111.jpg" rel="prettyPhoto"><img src="images/submissions/111.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/112.jpg" rel="prettyPhoto"><img src="images/submissions/112.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/113.jpg" rel="prettyPhoto"><img src="images/submissions/113.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/114.jpg" rel="prettyPhoto"><img src="images/submissions/114.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/115.jpg" rel="prettyPhoto"><img src="images/submissions/115.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/116.jpg" rel="prettyPhoto"><img src="images/submissions/116.jpg"alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/117.jpg" rel="prettyPhoto"><img src="images/submissions/117.jpg" alt="image"/></a>
+	</div>
+    <div class="sound">
+        <a href="images/submissions/118.jpg" rel="prettyPhoto"><img src="images/submissions/118.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/119.jpg" rel="prettyPhoto"><img src="images/submissions/119.jpg" alt="image"/></a>
+    </div>        
+    <div class="photography">
+        <a href="images/submissions/120.jpg" rel="prettyPhoto"><img src="images/submissions/120.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/121.jpg" rel="prettyPhoto"><img src="images/submissions/121.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/122.jpg" rel="prettyPhoto"><img src="images/submissions/122.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/123.jpg" rel="prettyPhoto"><img src="images/submissions/123.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/124.jpg" rel="prettyPhoto"><img src="images/submissions/124.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/125.jpg" rel="prettyPhoto"><img src="images/submissions/125.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/126.jpg" rel="prettyPhoto"><img src="images/submissions/126.jpg"alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/127.jpg" rel="prettyPhoto"><img src="images/submissions/127.jpg" alt="image"/></a>
+	</div>
+    <div class="sound">
+        <a href="images/submissions/128.jpg" rel="prettyPhoto"><img src="images/submissions/128.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/129.jpg" rel="prettyPhoto"><img src="images/submissions/129.jpg" alt="image"/></a>
+    </div>
+    <div class="photography">
+        <a href="images/submissions/130.png" rel="prettyPhoto"><img src="images/submissions/130.png" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/131.png" rel="prettyPhoto"><img src="images/submissions/131.png" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/132.png" rel="prettyPhoto"><img src="images/submissions/132.png" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/133.png" rel="prettyPhoto"><img src="images/submissions/133.png" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/134.png" rel="prettyPhoto"><img src="images/submissions/134.png" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/135.png" rel="prettyPhoto"><img src="images/submissions/135.png" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/136.png" rel="prettyPhoto"><img src="images/submissions/136.png"alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/137.jpg" rel="prettyPhoto"><img src="images/submissions/137.jpg" alt="image"/></a>
+	</div>
+    <div class="sound">
+        <a href="images/submissions/138.jpg" rel="prettyPhoto"><img src="images/submissions/138.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/139.jpg" rel="prettyPhoto"><img src="images/submissions/139.jpg" alt="image"/></a>
+    </div>
+    <div class="photography">
+        <a href="images/submissions/140.jpg" rel="prettyPhoto"><img src="images/submissions/140.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/141.jpg" rel="prettyPhoto"><img src="images/submissions/141.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/142.jpg" rel="prettyPhoto"><img src="images/submissions/142.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/143.jpg" rel="prettyPhoto"><img src="images/submissions/143.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/144.jpg" rel="prettyPhoto"><img src="images/submissions/144.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/145.jpg" rel="prettyPhoto"><img src="images/submissions/145.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/146.jpg" rel="prettyPhoto"><img src="images/submissions/146.jpg"alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/147.jpg" rel="prettyPhoto"><img src="images/submissions/147.jpg" alt="image"/></a>
+	</div>
+    <div class="sound">
+        <a href="images/submissions/148.jpg" rel="prettyPhoto"><img src="images/submissions/148.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/149.jpg" rel="prettyPhoto"><img src="images/submissions/149.jpg" alt="image"/></a>
+    </div>        
+    <div class="photography">
+        <a href="images/submissions/150.jpg" rel="prettyPhoto"><img src="images/submissions/150.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/151.jpg" rel="prettyPhoto"><img src="images/submissions/151.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/152.jpg" rel="prettyPhoto"><img src="images/submissions/152.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/153.jpg" rel="prettyPhoto"><img src="images/submissions/153.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/154.jpg" rel="prettyPhoto"><img src="images/submissions/154.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/155.jpg" rel="prettyPhoto"><img src="images/submissions/155.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/156.jpg" rel="prettyPhoto"><img src="images/submissions/156.jpg"alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/157.jpg" rel="prettyPhoto"><img src="images/submissions/157.jpg" alt="image"/></a>
+	</div>
+    <div class="sound">
+        <a href="images/submissions/158.jpg" rel="prettyPhoto"><img src="images/submissions/158.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/159.jpg" rel="prettyPhoto"><img src="images/submissions/159.jpg" alt="image"/></a>
+    </div>
+    <div class="photography">
+        <a href="images/submissions/160.jpg" rel="prettyPhoto"><img src="images/submissions/160.jpg" alt="image"/></a>
+	</div>
+    <div class="video">
+        <a href="images/submissions/161.jpg" rel="prettyPhoto"><img src="images/submissions/161.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/162.jpg" rel="prettyPhoto"><img src="images/submissions/162.jpg" alt="image"/></a>
+	</div>
+    <div class="photography">
+        <a href="images/submissions/163.jpg" rel="prettyPhoto"><img src="images/submissions/163.jpg" alt="image"/></a>
+	</div>
 </div>
+    
+<a name="info"></a>
+<div class="space1"></div>
+<h1>Information</h1>
+<div id="information">
+    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'>
+    </script>
+    <div id="map" style='overflow:hidden;height:600px;width:1100px;'>
+        <div id='gmap_canvas' style='height:400px;width:900px;'>
+        </div>
+        <div>
+            <small>
+                <a href="http://embedgooglemaps.com"></a>
+                <a href="http://freedirectorysubmissionsites.com/"></a>
+            </small>
+        </div>
+        <style>#gmap_canvas img{max-width:none!important;background:none!important}
+        </style>
+    </div>
+    <script type='text/javascript'>function init_map(){var myOptions = {zoom:10,center:new google.maps.LatLng(52.3558172,-7.6902551000000585),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(52.3558172,-7.6902551000000585)});infowindow = new google.maps.InfoWindow({content:'<strong>LIT Clonmel</strong><br>LIT Clonmel<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
+    </script>
+</div>
+    
+<a name="contact"></a>
+<div class="space2"></div>
+    <h1>Contact Us</h1>
+<div class="contact">
+    </div>
+        
+ 
+<script type="text/javascript">
 
-<script>
-	window.onload = printTable;
-	
-	//Variables
-	
- 	var info=document.createElement("div");
-	var mainBody=document.getElementById("mainBody");
-	var peopleTable=document.createElement("table");
-	var tableBody=document.createElement("tbody");
-	var heading=document.createElement("tr");
-	var id=document.createElement("th");
-	var desc=document.createElement("th");
-	var prior=document.createElement("th");
-	var due=document.createElement("th");
-	var del=document.createElement("th");
-	var mainBody=document.getElementById("mainBody");
-	var myTasks=[];
-	var keyinput= "myTask";
-	var space = document.createElement("div");
-	var space2 = document.createElement("div");
-	var addAnchor = document.createElement("a");
-	var addAnother = document.createElement("button");
-	var deleteConfirmAnchor = document.createElement("a");
-	var deleteConfirm = document.createElement("button");
-	var returnToTableAnchor = document.createElement("a");
-	var returnToTable = document.createElement("button");
-	
-	//Setting Attributes
-	
-	info.setAttribute("style","font-size:50px;");
-	heading.setAttribute("style", "font-size:30px;");
-	returnToTableAnchor.setAttribute("href","#table");
-	returnToTableAnchor.appendChild(returnToTable);
-	deleteConfirmAnchor.setAttribute("href","#table");
-	deleteConfirmAnchor.setAttribute("name","delete");
-	deleteConfirmAnchor.appendChild(deleteConfirm);
-	deleteConfirm.setAttribute("class","btn btn-success");
-	deleteConfirm.setAttribute("style", "width: 500px; margin: 5px; height: 600px; font-size:50px;");
-	deleteConfirm.innerHTML="DELETE";
-	returnToTable.setAttribute("class","btn btn-danger");
-	returnToTable.setAttribute("style", "width: 500px; margin: 5px; height: 600px; font-size:50px;");
-	returnToTable.innerHTML="RETURN TO TOP";
-    info.innerHTML="Task Manager Shown Below:";
-	peopleTable.setAttribute("id", "tableDesign");
-    peopleTable.setAttribute("class", "table");
-	peopleTable.setAttribute("style", "background-color:#FFC;");
-	id.setAttribute("id", "sortID");
-	desc.setAttribute("id", "sortDescription");
-	prior.setAttribute("id", "sortPriority");
-	due.setAttribute("id", "sortDate");
-	id.innerHTML="ID";
-	desc.innerHTML="Description";
-	prior.innerHTML="Priority";
-	due.innerHTML="Due Date";
-	del.innerHTML="Delete?";
-	space.setAttribute("style", "height: 1500px;");
-	space2.setAttribute("style", "height: 100px;");
-	mainBody.appendChild(space2);
-	addAnchor.setAttribute("href", "#addTask");
-	addAnother.setAttribute("style", "height: 300px; width: 1080px; font-size: 100px;");
-	addAnother.setAttribute("class", "btn btn-success");
-	addAnother.innerHTML="Add Another Task";
-		
-	document.getElementById("enter").onclick= enterTask;
-	
-	function enterTask(){
-        var randomNumber = (Math.random() * 10) + 1;
-		randomNumber=Math.round(randomNumber);
-        var task={
-			id: randomNumber,
-			description: document.getElementById("descInput").value,
-			priority: document.getElementById("priorInput").value,
-			dueDate: document.getElementById("dateInput").value.toString(),
-        };
-		myTasks.push(task);  
-        if(typeof(window.localStorage)!="undefined"){
-            window.localStorage.setItem(keyinput,JSON.stringify(myTasks));	
-		}
-	
-		else{
-			alert("window.localStorage, not defined");
-		}
-		printTable();
+$(window).load(function(){
+    var $container = $('.portfolioContainer');
+    $container.isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
+    });
+ 
+    $('.portfolioFilter a').click(function(){
+        $('.portfolioFilter .current').removeClass('current');
+        $(this).addClass('current');
+ 
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+         });
+         return false;
+    }); 
+    
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+    
+    $("#catagoryContainer  a").click(function(){
+        $("#" + this.id + "Menu").trigger("click");
+    });
+  
+    var navbar = $('#navbar-main'),
+    		distance = navbar.offset().top,
+        $window = $(window);
 
-    }
-	
-    function printTable(){
-		var myTasks = JSON.parse(localStorage.getItem("myTask"));
-		if(localStorage.getItem("myTasks")==null || localStorage.getItem("myTasks")!=null){
-        	clearTable();
-			mainBody.appendChild(info);
-			mainBody.appendChild(space2); 
-        	mainBody.appendChild(peopleTable);
-        	peopleTable.appendChild(tableBody);
-        	tableBody.appendChild(heading);
-        	heading.appendChild(id);
-        	heading.appendChild(desc);
-        	heading.appendChild(prior);
-        	heading.appendChild(due);
-        	heading.appendChild(del);
-        	for(var i = 0; i < myTasks.length; i++){
-            	var newRow=document.createElement("tr"); 
-				newRow.setAttribute("style", "font-size:30px;");
-				var taskID=document.createElement("td");
-				taskID.innerHTML=myTasks[i].id;
-				newRow.appendChild(taskID);
-					    
-				var taskDescription=document.createElement("td");
-				taskDescription.innerHTML=myTasks[i].description;
-				newRow.appendChild(taskDescription);
-						
-				var taskPriority=document.createElement("td");
-				taskPriority.innerHTML=myTasks[i].priority;
-				newRow.appendChild(taskPriority);
-					
-				var taskDueDate=document.createElement("td");
-				taskDueDate.innerHTML=myTasks[i].dueDate;
-				newRow.appendChild(taskDueDate);
-						
-				var deleteRowButton=document.createElement("button");
-				var goToDelete = document.createElement("a");
-				goToDelete.setAttribute("href","#delete");
-				deleteRowButton.setAttribute("id", "deleteButton");
-				deleteRowButton.setAttribute("class", "btn btn-default");
-				deleteRowButton.innerHTML="Delete";
-					    
-				var deleteRow=document.createElement("td");
-				deleteRowButton.setAttribute("style", "width: 120px; height 50px; font-size:30px;");
-				goToDelete.appendChild(deleteRowButton);
-				deleteRow.appendChild(goToDelete);
-				newRow.appendChild(deleteRow);
-				peopleTable.appendChild(newRow);				
-				 
-            	deleteRowButton.onclick=function(){
-					deleteConfirm.onclick=function(){
-						var j = this.parentNode.parentNode.parentNode.rowIndex;
-            	    	peopleTable.deleteRow(j-1);
-						myTasks.splice(j-1,1);
-						window.localStorage.setItem(keyinput,JSON.stringify(myTasks));
-                		clearTable();
-						printTable();
-					}	
-				}	
-    		}
-			mainBody.appendChild(addAnchor);
-			addAnchor.appendChild(addAnother);
-			mainBody.appendChild(space);	
-			mainBody.appendChild(deleteConfirmAnchor);
-			mainBody.appendChild(returnToTableAnchor);
-    	}
-	}
-	
-	function clearTable(){
-		peopleTable.innerHTML="";
-    }
-	
-	document.getElementById("clear").onclick=function(){
-		localStorage.clear();
-		clearTable();
-	}
-	
-    desc.onclick=function(){
-        myTasks.sort(function(a,b){
-            var nameA=a.description.toLowerCase();
-            var nameB=b.description.toLowerCase();
-		
-            if (nameA < nameB){
-				return -1;
-            }
-			
-            if (nameA > nameB){
-                return 1;
-            }
-			
-            else{
-                return 0;
-            }
-        })
-		
-        clearTable();
-        printTable();
-    }
-	
-    id.onclick=function(){
-        myTasks.sort(sortAgeFunction)
-		
-        function sortAgeFunction(a,b){
-            return a.id-b.id;
+    $window.scroll(function() {
+        if ($window.scrollTop() >= distance) {
+            navbar.removeClass('navbar-fixed-top').addClass('navbar-fixed-top');
+          	$("body").css("padding-top", "70px");
+        } else {
+            navbar.removeClass('navbar-fixed-top');
+            $("body").css("padding-top", "0px");
         }
-		
-        clearTable();
-        printTable();
-    }
-	
-    prior.onclick=function(){
-        myTasks.sort(sortPriorFunction)
-		
-        function sortPriorFunction(a,b){
-			
-            return a.priority-b.priority;
-        }
-		
-        clearTable();
-        printTable();
-    }
-		
-    due.onclick=function(){
-        myTasks.sort(function(a,b){
-            var nameA=a.description.toLowerCase();
-            var nameB=b.description.toLowerCase();
-		
-            if (nameA < nameB){
-				return -1;
-            }
-			
-            if (nameA > nameB){
-                return 1;
-            }
-			
-            else{
-                return 0;
-            }
-        })
-		
-        clearTable();
-        printTable();
-    }
+    });
+});
 
 </script>
-<script src="js/jQuery.js"></script>
-<script src="js/bootstrap.js"></script>
-<a name="table"></a>
-
-<br/><br/><br/><br/><br/<br/><br/><br/><br/><br/><br/<br/><br/><br/><br/><br/<br/><br/><br/><br/<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+ 
 </body>
 </html>
