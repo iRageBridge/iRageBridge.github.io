@@ -1,14 +1,17 @@
+673bb7
+
 body {
     font-family: Arial;
     min-height: 2000px;
+    background-color: #eee8f6;
 }
 
 .portfolioFilter{
-    background-color: #007f69;
+    background-color: #eee8f6;
 }
 
 #information{
-    background-color: #004035;
+    background-color: #673bb7;
 }
 
 #map{
@@ -29,7 +32,7 @@ img[src^="images/submissions/"]{
 }
 
 #landing{
-    background-color: #00bf9e;
+    background-color: #673bb7;
     height: 1000px;
 }
 
@@ -39,7 +42,7 @@ img[src^="images/submissions/"]{
 
 .contact{
     height: 1000px;
-    background-color: #00e5be;
+    background-color: #673bb7;
 }
 
 #catagoryContainer div{
@@ -53,7 +56,7 @@ img[src^="images/submissions/"]{
 }
 
 .portfolioContainer{
-    background-color: #00ffd3;
+    background-color: #673bb7;
     width: 100%;
 }
 
@@ -90,17 +93,17 @@ img {
 }
 
 .space{
-    background-color: #00bf9e;
+    background-color: #673bb7;
     height: 100px;
 }
 
 .space1{
-    background-color: #007f69;
+    background-color: #673bb7;
     height: 100px;
 }
 
 .space2{
-    background-color: #004035;
+    background-color: #673bb7;
     height: 100px;
 }
 
