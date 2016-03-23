@@ -100,6 +100,11 @@ body {
     background-color: #eee8f6;
 }
 
+footer{
+    height: 400px;
+    background-color: black; 
+}
+
 .portfolioFilter{
     background-color: #eee8f6;
 }

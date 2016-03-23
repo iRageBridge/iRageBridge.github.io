@@ -50,8 +50,8 @@
     <h1>Pen and Pixel Gallery</h1>
 <div class="portfolioFilter">
     
-    <a href="#" data-filter="*" class="current" id="allMenu">All Categories</a>
-    <a href="#" id="gamesMenu" data-filter=".games">Games</a>
+    <a href="#" id="allMenu" data-filter="*">All Categories</a>
+    <a href="#" id="gamesMenu" data-filter=".games" class="current">Games</a>
     <a href="#" id="animationMenu" data-filter=".animation">Animation</a>
     <a href="#" id="photographyMenu" data-filter=".photography">Photography</a>
     <a href="#" id="webAppsMenu" data-filter=".webApps">Web Applications</a>
@@ -584,14 +584,16 @@
 <div class="contact">
     <iframe src="https://docs.google.com/forms/d/1PpoJ5hcdPyaySpNuDGAnn6QWGhT7gC3OBUVXazjNqBQ/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 </div>
-        
+    
+<footer>footer
+</footer>
  
 <script type="text/javascript">
 
 $(window).load(function(){
     var $container = $('.portfolioContainer');
     $container.isotope({
-        filter: '*',
+        filter: '.games',
         animationOptions: {
             duration: 750,
             easing: 'linear',
