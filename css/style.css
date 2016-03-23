@@ -16,6 +16,9 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 60px;
+    overflow:hidden;
+    height:600px;
+    width:900px;'
 }
 
 .portfolioFilter a { 
@@ -25,17 +28,19 @@ body {
 }
 
 img[src^="images/submissions/"]{
+    margin: 5px;
     width: 150px;
     height: 150px;
 }
 
 #landing{
     background-color: #673bb7;
-    height: 1000px;
+    height: 100%;
+    width: 100%;
 }
 
 .findUs{
-    height: 1000px;
+    height: 100%;
 }
 
 .contact{
@@ -54,12 +59,59 @@ img[src^="images/submissions/"]{
 }
 
 .portfolioContainer{
+    padding: 20px;
     background-color: #673bb7;
     width: 100%;
 }
 
 img {
     margin:5px;
+}
+
+.space{
+    background-color: #673bb7;
+    height: 100px;
+}
+
+.space1{
+    background-color: #673bb7;
+    height: 200px;
+}
+
+.space2{
+    background-color: #673bb7;
+    height: 200px;
+}
+
+.portfolioFilter a { 
+    margin-right: 10px; 
+	color:#666;
+	text-decoration:none;
+}
+
+#landing{
+    height: 1000px;
+}
+
+#gmap_canvas{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+}
+
+#catagoryContainer<img{
+    width: 800px;
+    height: 230px;
+    float:left;
+}
+
+.portfolioFilter a.current { 
+    font-weight:bold;
+}
+
+.portfolioContainer{
+    width: 100%;
 }
 
 .isotope-item {
@@ -86,51 +138,6 @@ img {
     -webkit-transition-property: -webkit-transform, opacity;
     -moz-transition-property: -moz-transform, opacity;
     transition-property: transform, opacity;
-}body {
-    font-family: Arial;
-}
-
-.space{
-    background-color: #673bb7;
-    height: 100px;
-}
-
-.space1{
-    background-color: #673bb7;
-    height: 100px;
-}
-
-.space2{
-    background-color: #673bb7;
-    height: 100px;
-}
-
-.portfolioFilter a { 
-    margin-right: 10px; 
-	color:#666;
-	text-decoration:none;
-}
-
-#landing{
-    height: 1000px;
-}
-
-#catagoryContainer<img{
-    width: 800px;
-    height: 230px;
-    float:left;
-}
-
-.portfolioFilter a.current { 
-    font-weight:bold;
-}
-
-.portfolioContainer{
-    width: 100%;
-}
-
-img {
-    margin:5px;
 }
 
 .isotope-item {
