@@ -1,8 +1,36 @@
 @media only screen and (max-width: 500px) {
     img[src^="images/submissions/"]{
          margin: 5px;
-         width: 300px;
-         height: 300px;
+         width: 200px;
+         height: 200px;
+    }
+    .navbar-nav > li > a, .navbar-brand {
+        padding-top:4px !important; 
+        padding-bottom:0 !important;
+        height: 50px;
+        font-size: 20px;
+    }
+    .navbar {
+        min-height:50px !important;
+    }
+    .navbar-brand{
+        font-size: 20px;
+    }
+    
+    .portfolioFilter a {
+        font-size: 17px;
+        margin-right: 10px; 
+	    color:#666;
+	    text-decoration:none;
+    }
+    
+    #map{
+        margin-left: auto;
+        margin-right: auto;
+        padding: 60px;
+        overflow:hidden;
+        height:200px;
+        width:300px;'
     }
 }
 
@@ -31,6 +59,15 @@
 	    color:#666;
 	    text-decoration:none;
     }
+    
+    #map{
+        margin-left: auto;
+        margin-right: auto;
+        padding: 60px;
+        overflow:hidden;
+        height:400px;
+        width:600px;'
+    }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -45,7 +82,17 @@
 	    color:#666;
         text-decoration:none;
     }
+        
+    #map{
+        margin-left: auto;
+        margin-right: auto;
+        padding: 60px;
+        overflow:hidden;
+        height:600px;
+        width:900px;'
+    }
 }
+
 
 body {
     font-family: Arial;
@@ -59,15 +106,6 @@ body {
 
 #information{
     background-color: #673bb7;
-}
-
-#map{
-    margin-left: auto;
-    margin-right: auto;
-    padding: 60px;
-    overflow:hidden;
-    height:600px;
-    width:900px;'
 }
 
 .portfolioFilter a { 
