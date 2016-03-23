@@ -3,7 +3,7 @@
          margin: 5px;
          width: 300px;
          height: 300px;
-    }'
+    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -12,15 +12,26 @@
          width: 300px;
          height: 300px;
     }
+    .navbar-nav > li > a, .navbar-brand {
+        padding-top:4px !important; 
+        padding-bottom:0 !important;
+        height: 100px;
+        font-size: 30px;
+    }
+    .navbar {
+        min-height:100px !important;
+    }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1000px) {
     img[src^="images/submissions/"]{
          margin: 5px;
          width: 150px;
          height: 150px;
     }
 }
+
+
 
 body {
     font-family: Arial;
