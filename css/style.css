@@ -66,8 +66,8 @@
         margin-right: auto;
         padding: 60px;
         overflow:hidden;
-        height:400px;
-        width:600px;'
+        height:600px;
+        width:800px;'
     }
     #landing img{
         width: 950px;
@@ -95,7 +95,7 @@
         float: left;
         margin-left: 150px;
         color: #eee8f6;
-        width: 450px;
+        width: 900px;
     }
     
     #aboutHeading{
@@ -110,7 +110,7 @@
         color: #eee8f6;
         font-size: 24px;
         float: right;
-        width: 400px;
+        width: 900px;
         padding: 50px;
     }
 }
