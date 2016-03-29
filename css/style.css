@@ -92,16 +92,17 @@
      #findUs{
         padding: 10px;
         font-size: 36px;
-        margin-left: 100px;
+        margin-left: 350px;
         color: #eee8f6;
         width: 450px;
     }
     
     #aboutHeading{
+        margin-left: 200px;
         padding: 10px;
         font-size: 36px;
         color: #eee8f6;
-        width: 250px;
+        width: 450px;
     }
     
     #aboutUs{ 
