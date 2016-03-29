@@ -70,7 +70,7 @@
         width:600px;'
     }
     #landing img{
-        width: 795px;
+        width: 820px;
         height: 500px;
     }
     
@@ -91,17 +91,6 @@
 }
 
 @media only screen and (min-width: 1000px) {
-    body {
-        font-family: Georgia;
-        font-family: serif;
-        min-height: 2000px;
-        background-color: #eee8f6;
-    }
-    
-    h1{
-        text-align: center;
-    }
-    
     img[src^="images/submissions/"]{
          margin: 5px;
          width: 150px;
@@ -185,6 +174,10 @@ body {
     min-height: 2000px;
     background-color: #673bb7;
 }
+
+h1{
+        text-align: center;
+    }
 
 footer{
     height: 200px;
