@@ -34,7 +34,6 @@
     }
     
 }
-
 @media only screen and (max-width: 1000px) {
     img[src^="images/submissions/"]{
          margin: 5px;
@@ -202,8 +201,8 @@
     }
     
     #landing img{
-        width: 1850px;
-        height: 950px;
+        width: 100%;
+        height: 100%;
         padding: 50px;
     }
     
@@ -231,46 +230,57 @@
     }
     
     #pen{
-    color: black;
-    text-decoration: none;
-    font-family: cursive;
-    font-size: 200px;
-    position: absolute;
-    top: 200px;
-    left: 0;
-    margin-left: 200px;
-}
+        color: black;
+        text-decoration: none;
+        font-family: cursive;
+        font-size: 950%;
+        position: absolute;
+        top: 15%;
+        margin-left: 10%;
+    }
 
-#and{
-    color: black;
-    text-decoration: none;
-    font-family: impact;
-    font-size: 190px;
-    position: absolute;
-    top: -250px;
-    margin-left: 850px;
-}
+    #and{
+        color: black;
+        text-decoration: none;
+        font-family: impact;
+        font-size: 1000%;
+        position: absolute;
+        top: -25%;
+        margin-left: 50%;
+    }
 
-#pixel{
-    font-family: impact;
-    visibility: hidden;
-    font-size: 190px;
-    color: #00FF00;
-    position: absolute;
-    top: 600px;
-    margin-left: 1250px;
-}
+    #pixel{
+        font-family: impact;
+        visibility: hidden;
+        font-size: 950%;
+        color: #00FF00;
+        position: absolute;
+        top: 65%;
+        margin-left: 65%;
+    }
+    
+    #angle{
+        font-size: 1000%;
+        color: #00FF00;
+        position: absolute;
+        top: 50%;
+        margin-left: 65%;
+    }
+    
+    #cont{
+        opacity: 0;
+        font-family: impact;
+        font-size: 600%;
+        color: #eee8f6;
+        position: absolute;
+        top: 80%;
+        margin-left: 50px;
+        }
+    }
 
-#cont{
-    opacity: 0;
-    font-family: impact;
-    font-size: 90px;
-    color: #eee8f6;
-    position: absolute;
-    top: 700px;
-    margin-left: 50px;
-}
-}
+
+
+
 
 
 body {
@@ -282,16 +292,6 @@ body {
 
 #landing{
     position: relative;
-}
-
-
-
-#angle{
-    font-size: 150px;
-    color: #00FF00;
-    position: absolute;
-    top: 450px;
-    margin-left: 1250px;
 }
 
 h1{
