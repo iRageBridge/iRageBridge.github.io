@@ -6,19 +6,26 @@
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="css/bootstrap.min.css"/>
 <link rel="stylesheet" href="css/prettyPhoto.css" media="screen" title="prettyPhoto stylesheet" charset="utf-8"/>
+<link rel="stylesheet" href="css/animate.css"/>
 <script src="js/jquery-1.11.1.js" type="text/javascript"></script>
 <script src="js/jquery.isotope.js" type="text/javascript"></script>
 <script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="js/npm.js" type="text/javascript"></script>
+<script src="js/jquery.lettering.js"></script>
+<script src ="js/jquery.textillate.js"></script>
 
 
 </head>
 <body>
-    <div id="landing">
-        <img src="images/Banners/penAndPixelFinal.png"/>
-        
-    </div>
+    <a href="#welcome"><div id="landing">
+        <img src="images/Banners/penAndPixelBlank.png"/>
+        <div id="pen">PEN</div>
+        <div id="and">&amp;</div>
+        <div id="angle">></div>
+        <div id="pixel">PIXEL</div>
+        <div id="cont">(Click anywhere to continue)</div>
+        </div></a>
     
     
     
@@ -470,25 +477,25 @@
         <a href="images/submissions/129.jpg" rel="prettyPhoto"><img src="images/submissions/129.jpg" alt="image"/></a>
     </div>
     <div class="photography">
-        <a href="images/submissions/130.jpg" rel="prettyPhoto"><img src="images/submissions/130.jpg" alt="image"/></a>
+        <a href="images/submissions/130.png" rel="prettyPhoto"><img src="images/submissions/130.png" alt="image"/></a>
 	</div>
     <div class="video">
-        <a href="images/submissions/131.jpg" rel="prettyPhoto"><img src="images/submissions/131.jpg" alt="image"/></a>
+        <a href="images/submissions/131.png" rel="prettyPhoto"><img src="images/submissions/131.png" alt="image"/></a>
 	</div>
     <div class="photography">
-        <a href="images/submissions/132.jpg" rel="prettyPhoto"><img src="images/submissions/132.jpg" alt="image"/></a>
+        <a href="images/submissions/132.png" rel="prettyPhoto"><img src="images/submissions/132.png" alt="image"/></a>
 	</div>
     <div class="photography">
-        <a href="images/submissions/133.jpg" rel="prettyPhoto"><img src="images/submissions/133.jpg" alt="image"/></a>
+        <a href="images/submissions/133.png" rel="prettyPhoto"><img src="images/submissions/133.png" alt="image"/></a>
 	</div>
     <div class="photography">
-        <a href="images/submissions/134.jpg" rel="prettyPhoto"><img src="images/submissions/134.jpg" alt="image"/></a>
+        <a href="images/submissions/134.png" rel="prettyPhoto"><img src="images/submissions/134.png" alt="image"/></a>
 	</div>
     <div class="photography">
-        <a href="images/submissions/135.jpg" rel="prettyPhoto"><img src="images/submissions/135.jpg" alt="image"/></a>
+        <a href="images/submissions/135.png" rel="prettyPhoto"><img src="images/submissions/135.png" alt="image"/></a>
 	</div>
     <div class="photography">
-        <a href="images/submissions/136.jpg" rel="prettyPhoto"><img src="images/submissions/136.jpg"alt="image"/></a>
+        <a href="images/submissions/136.png" rel="prettyPhoto"><img src="images/submissions/136.png"alt="image"/></a>
 	</div>
     <div class="photography">
         <a href="images/submissions/137.jpg" rel="prettyPhoto"><img src="images/submissions/137.jpg" alt="image"/></a>
@@ -610,9 +617,9 @@
     <h1>Our Sponsors</h1>
 <div class="sponsors">
     <div>Irish Design <br/><img src="images/logos/1.jpg"/></div>
-    <div>Clonmel Chamber<br/><img src="images/logos/2.jpg"/></div>
+    <div>Clonmel Chamber<br/><img src="images/logos/2.png"/></div>
     <div>Eishtech<br/><img src="images/logos/3.jpg"/></div>
-    <div>Clonmel Junction Festival<br/><img src="images/logos/4.jpg"/></div>
+    <div>Clonmel Junction Festival<br/><img src="images/logos/4.png"/></div>
     <div>Tipperary Energy Agency<br/><img src="images/logos/6.jpg"/></div>
     <div>LIT<br/><img src="images/logos/7.jpg"/></div>
 </div>
@@ -639,6 +646,11 @@
         Privacy Policy</p>
     </div>
 </footer>
+<script>
+
+    
+    
+</script>
  
 <script type="text/javascript">
 
@@ -652,7 +664,25 @@ $(window).load(function(){
             queue: false
         }
     });
+    
+    
+    $("#and").animate({
+        top: "+=550px"
+    }, 3000);
+    
+    $(function(){
+        setTimeout(continueDelay, 5500);
+    });
  
+    $(function(){
+        setTimeout(animationDelay, 3000);
+    });
+    
+    $("#pen").textillate({
+        in: {effect: "fadeInLeft",
+             delay: 200,},
+    });
+    
     $('.portfolioFilter a').click(function(){
         $('.portfolioFilter .current').removeClass('current');
         $(this).addClass('current');
@@ -690,7 +720,16 @@ $(window).load(function(){
     });
 });
 
+function animationDelay(){
+    $("#pixel").textillate({
+        in: {effect: "bounceInLeft",
+             delay: 200,},
+    });
+}    
+    
+function continueDelay(){
+    $("#cont").fadeTo("slow", 1);
+}
 </script>
- 
 </body>
 </html>
