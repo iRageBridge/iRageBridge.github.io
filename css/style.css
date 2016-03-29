@@ -280,6 +280,10 @@
          width: 400px;
          height: 400px;
     }
+
+    #navbar-main{
+        height: 100px;
+    }
     
     .navbar-collapse.collapse {
         display: none !important;
@@ -291,6 +295,7 @@
         display:block !important;
     }
     .navbar-header {
+        height: 90px;
         float:none;
     }
 }
