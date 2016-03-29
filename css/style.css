@@ -91,17 +91,15 @@
     
      #findUs{
         padding: 10px;
-        font-size: 24px;
-        float: left;
-        margin-left: 150px;
+        font-size: 36px;
+        margin-left: 100px;
         color: #eee8f6;
         width: 450px;
     }
     
     #aboutHeading{
         padding: 10px;
-        float: left;
-        font-size: 24px;
+        font-size: 36px;
         color: #eee8f6;
         width: 250px;
     }
@@ -143,12 +141,11 @@
         float: left;
         margin-left: 350px;
         color: #eee8f6;
-        width: 850px;
+        width: 250px;
     }
     
     #aboutHeading{
         padding: 10px;
-        float: left;
         font-size: 48px;
         color: #eee8f6;
         width: 500px;
@@ -202,7 +199,7 @@ body {
 
 h1{
         text-align: center;
-    }
+}
 
 footer{
     height: 200px;
@@ -239,6 +236,7 @@ footer{
 }
 
 .sponsors{
+    color: #eee8f6;
     height: 1000px;
     background-color: #673bb7;
 }
