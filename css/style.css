@@ -152,6 +152,13 @@
         top: 700px;
         margin-left: 50px;
     }
+    .welcome{
+        background-color: #eee8f6;
+        font-size: 24px;
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media only screen and (min-width: 1000px) {
