@@ -202,6 +202,24 @@ h1{
         text-align: center;
 }
 
+#footerContact{
+    padding: 30px;
+    float: left;
+    width: 30%;
+}
+
+#footerCentre{
+    padding: 30px;
+    float: left;
+    width: 30%;
+}
+
+#footerLegal{
+    padding: 30px;
+    float: left;
+    width: 30%;
+}
+
 footer{
     height: 200px;
     background-color: black; 
