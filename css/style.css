@@ -32,6 +32,7 @@
         height:200px;
         width:300px;'
     }
+    
 }
 
 @media only screen and (max-width: 1000px) {
@@ -68,9 +69,24 @@
         height:400px;
         width:600px;'
     }
+    #landing img{
+        width: 795px;
+        height: 500px;
+    }
 }
 
 @media only screen and (min-width: 1000px) {
+    body {
+        font-family: Georgia;
+        font-family: serif;
+        min-height: 2000px;
+        background-color: #eee8f6;
+    }
+    
+    h1{
+        text-align: center;
+    }
+    
     img[src^="images/submissions/"]{
          margin: 5px;
          width: 150px;
@@ -84,24 +100,79 @@
     }
         
     #map{
-        margin-left: auto;
+        margin-left: 0;
         margin-right: auto;
         padding: 60px;
         overflow:hidden;
         height:600px;
-        width:900px;'
+        width:900px;
+    }
+    
+    #findUs{
+        padding: 10px;
+        font-size: 48px;
+        float: left;
+        margin-left: 350px;
+        color: #eee8f6;
+        width: 850px;
+    }
+    
+    #aboutHeading{
+        padding: 10px;
+        float: left;
+        font-size: 48px;
+        color: #eee8f6;
+        width: 500px;
+    }
+    
+    #aboutUs{ 
+        color: #eee8f6;
+        font-size: 24px;
+        float: right;
+        width: 900px;
+        padding: 80px;
+    }
+    
+    #landing img{
+        width: 1850px;
+        height: 950px;
+        padding: 50px;
+    }
+    
+    .sponsors img{
+        width: 500px;
+        height: 300px;
+        float: left;
+    }
+    
+    .sponsors div{
+        margin: 10px;
+        padding: 10px;
+        font-size: 30px;
+        text-align: center;
+        float: left;
+        width: 600px;
+    }
+    
+    .welcome{
+        background-color: #eee8f6;
+        font-size: 36px;
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
 
 body {
-    font-family: Arial;
+    font-family: Georgia;
+    font-family: serif;
     min-height: 2000px;
-    background-color: #eee8f6;
+    background-color: #673bb7;
 }
 
 footer{
-    height: 400px;
+    height: 200px;
     background-color: black; 
 }
 
@@ -113,7 +184,7 @@ footer{
     background-color: #673bb7;
 }
 
-.portfolioFilter a { 
+.portfolioFilter a {
     margin-right: 10px; 
 	color:#666;
 	text-decoration:none;
@@ -130,6 +201,11 @@ footer{
 }
 
 .contact{
+    height: 1000px;
+    background-color: #673bb7;
+}
+
+.sponsors{
     height: 1000px;
     background-color: #673bb7;
 }
@@ -165,7 +241,12 @@ img {
 }
 
 .space2{
-    background-color: #673bb7;
+    background-color: #eee8f6;
+    height: 200px;
+}
+
+.space3{
+    background-color: #eee8f6;
     height: 200px;
 }
 
