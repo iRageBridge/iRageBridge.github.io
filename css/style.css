@@ -91,24 +91,23 @@
      #findUs{
         padding: 10px;
         font-size: 36px;
-        margin-left: 350px;
+        margin-left: 40%;
         color: #eee8f6;
-        width: 450px;
+        width: 40%;
     }
     
     #aboutHeading{
-        margin-left: 200px;
+        margin-left: 30%;
         padding: 10px;
         font-size: 36px;
         color: #eee8f6;
-        width: 450px;
+        width: 40%;
     }
     
     #aboutUs{ 
         color: #eee8f6;
         font-size: 24px;
-        float: right;
-        width: 900px;
+        width: 100%;
         padding: 50px;
     }
     
