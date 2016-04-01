@@ -1,8 +1,8 @@
 @media only screen and (max-width: 500px) {
     img[src^="images/submissions/"]{
          margin: 5px;
-         width: 200px;
-         height: 200px;
+         width: 200%;
+         height: 200%;
     }
     .navbar-nav > li > a, .navbar-brand {
         padding-top:4px !important; 
@@ -273,7 +273,7 @@
     }
 }
 
-@media only screen and (max-width: 1300px) {
+@media (min-width: 768px) and (max-width: 1500px) {
     img[src^="images/submissions/"]{
          margin: 5px;
          width: 400px;
@@ -351,7 +351,6 @@ footer{
 
 .contact{
     height: 1000px;
-    width: 100%;
     background-color: #673bb7;
 }
 
