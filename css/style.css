@@ -281,6 +281,12 @@
     }
 }
 
+@media (min-width: 900px) and (max-width: 1400px){
+     #landing img{
+        height: 85%;
+    }
+}
+
 body {
     font-family: Georgia;
     font-family: serif;
@@ -292,10 +298,6 @@ body {
         padding:30px !important; 
         height: 100px;
         font-size: 37px;
-}
-
-#landing{
-    position: relative;
 }
 
 h1{
@@ -342,6 +344,8 @@ footer{
 }
 
 #landing{
+    height: 1000px;
+    position: relative;
     background-color: #673bb7;
     height: 100%;
     width: 100%;
@@ -406,10 +410,6 @@ img {
     margin-right: 10px; 
 	color:#666;
 	text-decoration:none;
-}
-
-#landing{
-    height: 1000px;
 }
 
 #gmap_canvas{
