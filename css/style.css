@@ -202,8 +202,8 @@
     }
     
     .sponsors img{
-        width: 500px;
-        height: 300px;
+        width: 300px;
+        height: 150px;
         float: left;
     }
     
@@ -213,7 +213,7 @@
         font-size: 30px;
         text-align: center;
         float: left;
-        width: 600px;
+        width: 30%;
     }
     
     .welcome{
@@ -273,7 +273,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1500px) {
+/*@media (min-width: 768px) and (max-width: 1500px) {
     img[src^="images/submissions/"]{
          margin: 5px;
          width: 400px;
@@ -297,7 +297,7 @@
         height: 90px;
         float:none;
     }
-}
+}*/
 
 body {
     font-family: Georgia;
