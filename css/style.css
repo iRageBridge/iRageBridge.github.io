@@ -135,7 +135,7 @@
     #cont{
         opacity: 0;
         font-family: impact;
-        font-size: 90px;
+        font-size: 500%;
         color: #eee8f6;
         position: absolute;
         top: 700px;
@@ -164,21 +164,19 @@
     }
         
     #map{
-        margin-left: 0;
+        margin-left: auto;
         margin-right: auto;
         padding: 60px;
         overflow:hidden;
-        height:600px;
-        width:900px;
+        height: 800px;
+        width:80%;
     }
     
     #findUs{
         padding: 10px;
         font-size: 48px;
-        float: left;
-        margin-left: 350px;
         color: #eee8f6;
-        width: 250px;
+        width: 500px;
     }
     
     #aboutHeading{
@@ -192,7 +190,8 @@
         color: #eee8f6;
         font-size: 36px;
         float: right;
-        width: 900px;
+        width: 100%;
+        text-align: center;
         padding: 80px;
     }
     
@@ -242,7 +241,7 @@
         font-size: 1000%;
         position: absolute;
         top: -25%;
-        margin-left: 50%;
+        margin-left: 45%;
     }
 
     #pixel{
@@ -266,7 +265,7 @@
     #cont{
         opacity: 0;
         font-family: impact;
-        font-size: 600%;
+        font-size: 500%;
         color: #eee8f6;
         position: absolute;
         top: 80%;
