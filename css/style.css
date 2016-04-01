@@ -274,7 +274,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1400px) {
+@media (min-width: 768px) and (max-width: 1500px) {
     img[src^="images/submissions/"]{
          margin: 5px;
          width: 400px;
