@@ -273,7 +273,7 @@
     }
 }
 
-@media (min-width: 500px) and (max-width: 1200px) {
+@media only screen and (max-width: 1300px) {
     img[src^="images/submissions/"]{
          margin: 5px;
          width: 400px;
@@ -351,6 +351,7 @@ footer{
 
 .contact{
     height: 1000px;
+    width: 100%;
     background-color: #673bb7;
 }
 
