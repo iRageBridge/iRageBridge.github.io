@@ -93,13 +93,13 @@ body{
     margin-right: auto;
 }
 
-a:visited {
+a:visited #landing {
     color:#222222;
 }
-a:hover {
+a:hover #landing {
     color:#222222;
 }
-a:active {
+a:active #landing {
     color:#222222;
 }
 
