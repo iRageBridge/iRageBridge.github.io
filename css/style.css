@@ -84,6 +84,10 @@ body{
     margin-right: auto;
 }
 
+.cv{
+    width: 45%;
+}
+
 #contact{
     color: orangered;
     font-family: "OCR A Std";
@@ -93,13 +97,18 @@ body{
     margin-right: auto;
 }
 
-a:visited #landing {
+iframe{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:visited {
     color:#222222;
 }
-a:hover #landing {
+a:hover {
     color:#222222;
 }
-a:active #landing {
+a:active {
     color:#222222;
 }
 
@@ -134,4 +143,81 @@ footer{
 #video{
     width: 800px;
     height: 450px;
+}
+
+.portfolioFilter a{
+    color: aliceblue;
+}
+
+div div a img{
+    width: 240px;
+    height: 140px;
+}
+
+.portfolioFilter a.current { 
+    font-weight:bold;
+}
+
+.portfolioContainer{
+    padding: 20px;
+    width: 100%;
+}
+
+img {
+    margin:5px;
+}
+
+/*Isotope CSS */
+
+.isotope-item {
+    z-index: 2;
+}
+.isotope-hidden.isotope-item {
+    pointer-events: none;
+    z-index: 1;
+}
+
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+}
+.isotope {
+    -webkit-transition-property: height, width;
+    -moz-transition-property: height, width;
+    transition-property: height, width;
+}
+.isotope .isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+.isotope-item {
+    z-index: 2;
+}
+.isotope-hidden.isotope-item {
+    pointer-events: none;
+    z-index: 1;
+}
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+}
+.isotope {
+    -webkit-transition-property: height, width;
+    -moz-transition-property: height, width;
+    transition-property: height, width;
+}
+.isotope .isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    transition-property: transform, opacity;
 }

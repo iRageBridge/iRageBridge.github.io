@@ -8,10 +8,14 @@
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css"/>
         <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/prettyPhoto.css"/>
+        <link rel="stylesheet" href="css/animate.css"/>
         
         <script src="js/jquery-1.11.1.js" type="text/javascript"></script>
+        <script src="js/jquery.isotope.js" type="text/javascript"></script>
+        <script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <link rel="stylesheet" href="css/animate.css"/>
+        <script src="js/npm.js" type="text/javascript"></script>
         <script src="js/jquery.lettering.js"></script>
         <script src ="js/jquery.textillate.js"></script>
     
@@ -72,9 +76,47 @@
         <p>
         </br></br></br>
         <h1>//Portfolio</h1>
-        <h3>//Showfeel:</h3>
-        <iframe src="https://www.youtube.com/embed/-AdW-DDDxek" frameborder="0" allowfullscreen autoplay=0 id="video"></iframe>
 
+        <div class="portfolioFilter">
+            <a href="#" id="allMenu" data-filter="*" class="current">All Categories</a>
+            <a href="#" id="actionMenu" data-filter=".script">ActionScript/JavaScript</a>
+            <a href="#" id="photographyMenu" data-filter=".photography">Photography</a>
+            <a href="#" id="animationMenu" data-filter=".animation">Animation</a>
+            <a href="#" id="cgiMenu" data-filter=".cgi">CGI</a>
+            <a href="#" id="videoMenu" data-filter=".video">Video</a>
+            <a href="#" id="showReelMenu" data-filter=".showreel">Showreel</a>
+        </div>
+
+        <div class="portfolioContainer">
+            <div class="script">
+                <a href="images/gallery/finalVersion.swf?width=1280&amp;height=720" rel="prettyPhoto" title="Mick The Mouse"><img src="images/thumbs/mickTheMouse.JPG" alt="Mick The Mouse"/></a>
+	        </div>
+            
+            <div class="showreel video">
+                <a href="https://www.youtube.com/watch?v=-AdW-DDDxek?width=1280&amp;height=720" rel="prettyPhoto"><img src="images/thumbs/showReel.JPG" alt="Showreel"/></a>
+            </div>
+            
+            <div class="animation">
+                <a href="images/gallery/Simon_Standbridge_Obstacle_Course_Final.swf?width=1280&amp;height=720" rel="prettyPhoto"><img src="images/thumbs/Animation.JPG" alt="Obstacle Course Animation"/></a>
+            </div>
+            
+            <div class="script">
+                <a href="externalSites/penAndPixel/index.html" target="_blank"><img src="images/thumbs/penAndPixel.JPG" alt="Pen and Pixel Website"/></a>
+            </div>
+            
+            <div class="script">
+                <a href="externalSites/taskManager/index.html" target="_blank"><img src="images/thumbs/taskManager.JPG" alt="Task Manager Website" /></a>
+            </div>
+            
+            <div class="photography">
+                <a href="images/gallery/photography1.JPG?width=1280&amp;height=720" rel="prettyPhoto"><img src="images/thumbs/photography1.JPG" alt="B&W Flower Photography" /></a>
+            </div>
+            
+            <div class="video">
+                <a href="https://www.youtube.com/watch?v=nJWOuYy-fQk?width=1280&amp;height=720" rel="prettyPhoto"><img src="images/thumbs/animal.JPG" alt="Music Video"/></a>
+            </div>
+
+        </div>
     </div>
 
     <a name="cv"></a>
@@ -82,21 +124,18 @@
         <p>
         </br></br></br>
         <h1>//CV</h1>
-        
-
-
+        <br/><br/>
+        <img src="images/cv1.PNG" alt="CV" class="cv"/>
+        <img src="images/cv2.PNG" alt="CV" class="cv"/>
     </div>
 
     <a name="contact"></a>
     <div id="contact">
         <p>
         </br></br></br>
-        <h1>//Contact Information</h1><br/><br/>
-        <p>Email: simonstandbridge@gmail.com<br/><br/>
-           Phone: 086-8987001</br></br>
-           Twitter: <a href="https://twitter.com/iRageBridge" target="_blank">@iRageBridge</a>
-        </p>
-
+        <h1>//Contact Me</h1>
+        <br/><br/>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfzHPo0wQD1_9-j53Pf-W7j8K1So_GPrbNFnkEwsas28KJ2Lg/viewform?embedded=true" width="75%" height="75%%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
     </div>
 
@@ -126,7 +165,50 @@
     <script type="text/javascript">
     
     $(document).ready(function(){
-            
+    
+    var $container = $('.portfolioContainer');
+    $container.isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
+    });
+    
+    $('.portfolioFilter a').click(function(){
+        $('.portfolioFilter .current').removeClass('current');
+        $(this).addClass('current');
+ 
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+         });
+         return false;
+    }); 
+    
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+  
+    var navbar = $('#navbar-main'),
+        distance = navbar.offset().top,
+        $window = $(window);
+
+    $window.scroll(function() {
+        if ($window.scrollTop() >= distance) {
+            navbar.removeClass('navbar-fixed-top').addClass('navbar-fixed-top');
+          	$("body").css("padding-top", "70px");
+            }
+        else {
+                navbar.removeClass('navbar-fixed-top');
+                $("body").css("padding-top", "0px");
+            }
+        });
+        
         $("#orangeS").textillate({
             in: {effect: "fadeInLeft",
             delay: 400,},
