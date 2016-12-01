@@ -214,7 +214,7 @@
     #simon{
         font-family: "Franklin Gothic Heavy";
         color: orangered;
-        top: 18%;
+        top: 22%;
         margin-left: 8%;
         position: absolute;
         margin left: 50px;
@@ -224,7 +224,7 @@
 
     #standbridge{
         font-family: "Franklin Gothic Heavy";
-        top: 25%;
+        top: 27%;
         margin-left: 8%;
         position: absolute;
         margin left: 50px;
@@ -241,7 +241,7 @@
     #portfolio{
         color: orangered;
         font-family: "OCR A Std";
-        height: 1200px;
+        height: 1800px;
         width: 90%;
         margin-left: auto;
         margin-right: auto;
