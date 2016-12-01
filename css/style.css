@@ -105,9 +105,11 @@ iframe{
 a:visited {
     color:#222222;
 }
+
 a:hover {
     color:#222222;
 }
+
 a:active {
     color:#222222;
 }
@@ -172,6 +174,7 @@ img {
 .isotope-item {
     z-index: 2;
 }
+
 .isotope-hidden.isotope-item {
     pointer-events: none;
     z-index: 1;
@@ -185,11 +188,13 @@ img {
     -moz-transition-duration: 0.8s;
     transition-duration: 0.8s;
 }
+
 .isotope {
     -webkit-transition-property: height, width;
     -moz-transition-property: height, width;
     transition-property: height, width;
 }
+
 .isotope .isotope-item {
     -webkit-transition-property: -webkit-transform, opacity;
     -moz-transition-property: -moz-transform, opacity;
@@ -199,10 +204,12 @@ img {
 .isotope-item {
     z-index: 2;
 }
+
 .isotope-hidden.isotope-item {
     pointer-events: none;
     z-index: 1;
 }
+
 .isotope,
 .isotope .isotope-item {
   /* change duration value to whatever you like */
@@ -211,11 +218,13 @@ img {
     -moz-transition-duration: 0.8s;
     transition-duration: 0.8s;
 }
+
 .isotope {
     -webkit-transition-property: height, width;
     -moz-transition-property: height, width;
     transition-property: height, width;
 }
+
 .isotope .isotope-item {
     -webkit-transition-property: -webkit-transform, opacity;
     -moz-transition-property: -moz-transform, opacity;

@@ -67,8 +67,7 @@
         <h1>//About Me</h1>
             I am a front-end web designer, And a currently a student in LIT Clonmel campus undertaking the Creative Multimedia program. I can provide the following
             services: </br></br> Front End Web Development:</br>test
-        </p>
-        
+        </p>  
     </div>
         
     <a name="portfolio"></a>
@@ -89,31 +88,51 @@
 
         <div class="portfolioContainer">
             <div class="script">
-                <a href="images/gallery/finalVersion.swf?width=1280&amp;height=720" rel="prettyPhoto" title="Mick The Mouse"><img src="images/thumbs/mickTheMouse.JPG" alt="Mick The Mouse"/></a>
+                <a href="images/gallery/finalVersion.swf?width=1280&amp;height=720" rel="prettyPhoto" title="Flash Game: Mick The Mouse"><img src="images/thumbs/mickTheMouse.JPG" alt="Mick The Mouse"/></a>
 	        </div>
             
             <div class="showreel video">
-                <a href="https://www.youtube.com/watch?v=-AdW-DDDxek?width=1280&amp;height=720" rel="prettyPhoto"><img src="images/thumbs/showReel.JPG" alt="Showreel"/></a>
+                <a href="https://www.youtube.com/watch?v=-AdW-DDDxek?width=1280&amp;height=720" rel="prettyPhoto" title="Simon Standbridge: Showreel"><img src="images/thumbs/showReel.JPG" alt="Showreel"/></a>
             </div>
             
             <div class="animation">
-                <a href="images/gallery/Simon_Standbridge_Obstacle_Course_Final.swf?width=1280&amp;height=720" rel="prettyPhoto"><img src="images/thumbs/Animation.JPG" alt="Obstacle Course Animation"/></a>
+                <a href="images/gallery/Simon_Standbridge_Obstacle_Course_Final.swf?width=1280&amp;height=720" rel="prettyPhoto" title="Obstacle Course Animation"><img src="images/thumbs/Animation.JPG" alt="Obstacle Course Animation"/></a>
             </div>
             
             <div class="script">
-                <a href="externalSites/penAndPixel/index.html" target="_blank"><img src="images/thumbs/penAndPixel.JPG" alt="Pen and Pixel Website"/></a>
+                <a href="externalSites/penAndPixel/index.html" target="_blank" title="Pen and Pixel responsive website"><img src="images/thumbs/penAndPixel.JPG" alt="Pen and Pixel Website"/></a>
             </div>
             
             <div class="script">
-                <a href="externalSites/taskManager/index.html" target="_blank"><img src="images/thumbs/taskManager.JPG" alt="Task Manager Website" /></a>
+                <a href="externalSites/taskManager/index.html" target="_blank" title="Javascript based task manager"><img src="images/thumbs/taskManager.JPG" alt="Task Manager Website" /></a>
             </div>
             
             <div class="photography">
-                <a href="images/gallery/photography1.JPG?width=1280&amp;height=720" rel="prettyPhoto"><img src="images/thumbs/photography1.JPG" alt="B&W Flower Photography" /></a>
+                <a href="images/gallery/photography1.JPG?width=1280&amp;height=720" rel="prettyPhoto" title="FLower Photography"><img src="images/thumbs/photography1.JPG" alt="B&W Flower Photography" /></a>
             </div>
             
             <div class="video">
-                <a href="https://www.youtube.com/watch?v=nJWOuYy-fQk?width=1280&amp;height=720" rel="prettyPhoto"><img src="images/thumbs/animal.JPG" alt="Music Video"/></a>
+                <a href="https://www.youtube.com/watch?v=nJWOuYy-fQk?width=1280&amp;height=720" rel="prettyPhoto" title="Music Video for New Valley Wolves"><img src="images/thumbs/animal.JPG" alt="Music Video"/></a>
+            </div>
+            
+            <div class="video">
+                <a href="https://vimeo.com/165315930?width=1280&amp;height=720" rel="prettyPhoto" title="Kinetic Text for Busy Line"><img src="images/thumbs/busyLine.JPG" alt="Kinetic Text"/></a>
+            </div>
+            
+            <div class="cgi">
+                <a href="https://www.youtube.com/watch?v=9bS5c5Ph_9I&feature=youtu.be?width=1280&amp;height=720" rel="prettyPhoto" title="Fossil Watch modelled and textured"><img src="images/thumbs/cgi1.JPG" alt="CGI1"/></a>
+            </div>
+            
+            <div class="cgi">
+                <a href="https://www.youtube.com/watch?v=KZWDnsRltwQ&feature=youtu.be?width=1280&amp;height=720" rel="prettyPhoto" title="Lacoste bottle modelled and textured"><img src="images/thumbs/cgi2.JPG" alt="CGI2"/></a>
+            </div>
+            
+            <div class="cgi">
+                <a href="https://www.youtube.com/watch?v=lYrNM7cUBuI&feature=youtu.be?width=1280&amp;height=720" rel="prettyPhoto" title="Hore Abbey Cashel: Colourisation"><img src="images/thumbs/colourisation.JPG" alt="colourisation"/></a>
+            </div>
+            
+            <div class="photography">
+                <a href="images/thumbs/photography2.JPG?width=1280&amp;height=720" rel="prettyPhoto" title="Dipytch Photography"><img src="images/thumbs/photography2.JPG" alt="Dipytch Photography" /></a>
             </div>
 
         </div>
@@ -135,7 +154,6 @@
         </br></br></br>
         <h1>//Contact Me</h1>
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfzHPo0wQD1_9-j53Pf-W7j8K1So_GPrbNFnkEwsas28KJ2Lg/viewform?embedded=true" width="75%" height="75%%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-
     </div>
 
     <footer>
@@ -164,89 +182,87 @@
     
     $(document).ready(function(){
     
-    var $container = $('.portfolioContainer');
-    $container.isotope({
-        filter: '*',
-        animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-        }
-    });
-    
-    $('.portfolioFilter a').click(function(){
-        $('.portfolioFilter .current').removeClass('current');
-        $(this).addClass('current');
- 
-        var selector = $(this).attr('data-filter');
+        var $container = $('.portfolioContainer');
         $container.isotope({
-            filter: selector,
+            filter: '*',
             animationOptions: {
                 duration: 750,
                 easing: 'linear',
                 queue: false
             }
-         });
-         return false;
-    }); 
+        });
     
-    $("a[rel^='prettyPhoto']").prettyPhoto();
+        $('.portfolioFilter a').click(function(){
+            $('.portfolioFilter .current').removeClass('current');
+            $(this).addClass('current');
+ 
+            var selector = $(this).attr('data-filter');
+            $container.isotope({
+                filter: selector,
+                animationOptions: {
+                    duration: 750,
+                    easing: 'linear',
+                    queue: false
+                }
+            });
+            return false;
+        }); 
+    
+        $("a[rel^='prettyPhoto']").prettyPhoto();
   
-    var navbar = $('#navbar-main'),
-        distance = navbar.offset().top,
-        $window = $(window);
-
-    $window.scroll(function() {
-        if ($window.scrollTop() >= distance) {
-            navbar.removeClass('navbar-fixed-top').addClass('navbar-fixed-top');
-          	$("body").css("padding-top", "70px");
-            }
-        else {
-                navbar.removeClass('navbar-fixed-top');
-                $("body").css("padding-top", "0px");
-            }
-        });
-        
-        $("#orangeS").textillate({
-            in: {effect: "fadeInLeft",
-            delay: 400,},
-        });
-            
-        $("#blackS").textillate({
-            in: {effect: "fadeInRight",
-            delay: 400,},
-        });
-        
         var navbar = $('#navbar-main'),
-        distance = navbar.offset().top,
-        $window = $(window);
-        
-        $window.scroll(function() {
+            distance = navbar.offset().top,
+            $window = $(window);
+
+            $window.scroll(function() {
             if ($window.scrollTop() >= distance) {
                 navbar.removeClass('navbar-fixed-top').addClass('navbar-fixed-top');
-      	        $("body").css("padding-top", "70px");
-            } 
-            else {
-            navbar.removeClass('navbar-fixed-top');
-            $("body").css("padding-top", "0px");
-            }
+                $("body").css("padding-top", "70px");
+                }
+                else {
+                    navbar.removeClass('navbar-fixed-top');
+                    $("body").css("padding-top", "0px");
+                }
+            });
+        
+            $("#orangeS").textillate({
+                in: {effect: "fadeInLeft",
+                delay: 400,},
+            });
+            
+            $("#blackS").textillate({
+                in: {effect: "fadeInRight",
+                delay: 400,},
+            });
+        
+            var navbar = $('#navbar-main'),
+            distance = navbar.offset().top,
+            $window = $(window);
+        
+            $window.scroll(function() {
+                if ($window.scrollTop() >= distance) {
+                    navbar.removeClass('navbar-fixed-top').addClass('navbar-fixed-top');
+      	            $("body").css("padding-top", "70px");
+                } 
+                else {
+                    navbar.removeClass('navbar-fixed-top');
+                    $("body").css("padding-top", "0px");
+                }
+            });
         });
-    });
         
-    $('a[href*="#"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                $('html, body').animate({
-                    scrollTop: target.offset().top
-                }, 1000);
-                return false;
+        $('a[href*="#"]:not([href="#"])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
             }
-        }
-    });
-        
-    </script>
-                
+        });    
+        </script>
     </body>
 </html>
