@@ -107,6 +107,7 @@
     iframe{
         margin-left: auto;
         margin-right: auto;
+        width: 100%;
     }
 
     a:visited {
@@ -284,6 +285,7 @@
     iframe{
         margin-left: auto;
         margin-right: auto;
+        width: 100%;
     }
 
     a:visited {
@@ -423,7 +425,7 @@
     #portfolio{
         color: orangered;
         font-family: "OCR A Std";
-        height: 1800px;
+        height: 2000px;
         width: 90%;
         margin-left: auto;
         margin-right: auto;
@@ -442,7 +444,7 @@
     #cv{
         color: orangered;
         font-family: "OCR A Std";
-        height: 1000px;
+        height: 1200px;
         width: 90%;
         margin-left: auto;
         margin-right: auto;
@@ -464,6 +466,7 @@
     iframe{
         margin-left: auto;
         margin-right: auto;
+        width: 100%;
     }
 
     a:visited {
@@ -476,6 +479,10 @@
 
     a:active {
         color:#222222;
+    }
+    
+    a{
+      color: #222222;
     }
 
     nav{
@@ -535,8 +542,8 @@
       
     img[src^="images/thumbs/"]{
          margin: 5px;
-         width: 384px;
-         height: 252px;
+         width: 512px;
+         height: 291px;
     }
 }
       
