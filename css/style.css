@@ -27,6 +27,7 @@
 
     #blackS{
         font-family: "Franklin Gothic Heavy";
+        color: black;
         top: 0%;
         margin-left: 47%;
         position: absolute;
@@ -49,6 +50,7 @@
 
     #standbridge{
         font-family: "Franklin Gothic Heavy";
+        color: black;
         top: 80%;
         margin-left: 46%;
         position: absolute;
@@ -198,6 +200,10 @@
     body{
         background-color: #222222;
     }
+      
+      #landingAnchor{
+          text-decoration: none;
+      }
     
     h1{
       color: orangered;
@@ -223,6 +229,7 @@
 
     #blackS{
         font-family: "Franklin Gothic Heavy";
+        color: black;
         top: 0%;
         margin-left: 50%;
         position: absolute;
@@ -244,6 +251,7 @@
 
     #standbridge{
         font-family: "Franklin Gothic Heavy";
+        color: black;
         top: 80%;
         margin-left: 46%;
         position: absolute;
@@ -432,6 +440,7 @@
 
     #blackS{
         font-family: "Franklin Gothic Heavy";
+        color: black;
         top: -1%;
         margin-left: 50%;
         position: absolute;
@@ -453,6 +462,7 @@
 
     #standbridge{
         font-family: "Franklin Gothic Heavy";
+        color: black;
         top: 27%;
         margin-left: 8%;
         position: absolute;
