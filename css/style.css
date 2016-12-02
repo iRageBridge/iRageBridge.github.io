@@ -81,7 +81,18 @@
         margin-left: auto;
         margin-right: auto;
     }
+      
+    #headshot{ 
+        margin: 10px;
+        padding: 10px;
+    }
 
+    #skills{
+      margin-left: auto;
+      margin-right: auto;
+      width: 40%;
+    }
+      
     #cv{
         color: orangered;
         font-family: "OCR A Std";
@@ -108,6 +119,7 @@
         margin-left: auto;
         margin-right: auto;
         width: 100%;
+        overflow:hidden;
     }
 
     a:visited {
@@ -186,6 +198,10 @@
     body{
         background-color: #222222;
     }
+    
+    h1{
+      color: orangered;
+    }
 
     #background{
         width: 600px;
@@ -252,12 +268,22 @@
     }
 
     #about{
-        color: orangered;
+        color: white;
         font-family: "OCR A Std";
         height: 1000px;
         width: 60%;
         margin-left: auto;
         margin-right: auto;
+    }
+      
+    #skills{
+      margin-left: auto;
+      margin-right: auto;
+      width: 40%;
+    }
+      
+    #orange{
+      color: orangered;
     }
 
     #cv{
@@ -286,6 +312,7 @@
         margin-left: auto;
         margin-right: auto;
         width: 100%;
+        overflow:hidden;
     }
 
     a:visited {
@@ -366,7 +393,25 @@
     body{
         background-color: #222222;
     }
+    
+    nav{
+        font-size: 45px;  
+        padding: 10px;
+        height: 60px;
+    }
+    .portfolioFilter{
+      font-size: 35px;
+    }
+      
+    h1{
+        color: orangered;
+        font-size: 70px;
+    }
 
+    #orange{
+      color: orangered;
+    }
+      
     #background{
         width: 600px;
         margin-left: 35%;
@@ -425,26 +470,32 @@
     #portfolio{
         color: orangered;
         font-family: "OCR A Std";
-        height: 2000px;
+        height: 100%;
         width: 90%;
         margin-left: auto;
         margin-right: auto;
     }
 
     #about{
-        color: orangered;
+        font-size: 50px;
+        color: white;
         font-family: "OCR A Std";
         font-size: 300%;
-        height: 1000px;
+        height: 100%;
         width: 90%;
         margin-left: auto;
         margin-right: auto;
     }
+    
+    #about img{
+        width: 50%;
+        height: 37%;
+      }
 
     #cv{
         color: orangered;
         font-family: "OCR A Std";
-        height: 1200px;
+        height: 100%;
         width: 90%;
         margin-left: auto;
         margin-right: auto;
@@ -457,7 +508,7 @@
     #contact{
         color: orangered;
         font-family: "OCR A Std";
-        height: 1000px;
+        height: 100%;
         width: 90%;
         margin-left: auto;
         margin-right: auto;
@@ -467,6 +518,7 @@
         margin-left: auto;
         margin-right: auto;
         width: 100%;
+        overflow:hidden;
     }
 
     a:visited {
